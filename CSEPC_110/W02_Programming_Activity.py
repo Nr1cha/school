@@ -1,0 +1,58 @@
+# The last name should be converted from whatever the user types to be displayed in ALL CAPS.
+
+# The job title should be displayed so that the first letter is capitalized.
+
+# The email address should be displayed in all lowercase.
+
+#========================
+
+# Prompt for all of the necessary values and store them in variables. Then display each item to the screen, without worrying about any spacing, punctuation, or formatting yet.
+
+# Arrange the display so that the spacing and punctuation exactly match the example shown.
+
+# Use the built-in string functions to make the last name display in all caps, the job title display in "title case," and the email display in all lowercase.
+
+#========================
+
+# Add hair color and eye color and put them both on the same line in the display.
+
+# Add a field for the name of the month they started and also a yes/no field for whether they have completed advanced training. Put these both on the same line in the display.
+
+# For the two lines that you just added, make it so that the second columns align, regardless of how many letters are in the responses.
+
+# To complete this one, you may need to search the internet for something like, "python spacing format" or something similar to see if you get any ideas.
+
+
+#input variables
+first_name = input('what is your First Name? ')
+last_name = input('what is your Last Name? ') #should be in all CAPS
+Email_address = input('Please enter your Email Address... ')
+phone_number = input('Please enter your Phone Number... ')
+job_title = input('Please enter your Job Title... ')
+ID_number = input('Please enter your ID Number... ')
+hair_color = input('what is your hair color? ')
+eye_color = input('what is your eye color? ')
+month_Started = input('what month did you start python? ')
+trained = input('have you completed advanced training? ',)
+
+#print statements
+print('The ID Card is:')
+print('------------------------------')
+print(last_name.upper()+', '+ first_name)
+print(job_title.title())
+print(f'ID: {ID_number}',"\n")
+print(Email_address.lower())
+print(phone_number,"\n")
+print('Hair: {h:10} Eyes: {e}'.format(h = hair_color, e = eye_color))
+print('Month: {m:9} Trained: {t}'.format(m = month_Started, t = trained))
+print('------------------------------','\n')
+
+
+# formatting strings
+# https://www.youtube.com/watch?v=fy10ci10R_g&t=878s
+
+# formatting more strings
+# https://www.youtube.com/watch?v=xwR28LoUnq0
+
+#stack overflow for same-line multicolumn output
+# https://stackoverflow.com/questions/10623727/python-spacing-and-aligning-strings

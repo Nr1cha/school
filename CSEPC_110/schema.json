@@ -1,0 +1,103 @@
+{
+    "bosses":[
+        "eikthyr",
+        "theElder",
+        "boneMass",
+        "moder",
+        "yagluth"
+    ],
+    "ages":[
+        "stoneAge",
+        "bronzeAge",
+        "ironAge",
+        "silverAge",
+        "blackMetalAge"
+    ],
+    "weapons":[
+        "club",
+        "crudeBow",
+        "flintAxe",
+        ""
+
+    ],
+    "armor":[
+        "rag",[
+
+        ],
+        "leather",[
+
+        ],
+        "trollLeather",[
+
+        ],
+        ""
+    ],
+    "tools":[
+        "hammer",
+        "pickaxes",[
+            "antler",
+            "",
+            ""
+        ],
+        "cultivator",
+        "fishingRod",
+        "torch",
+        "hoe"
+    ],
+    "food":[
+        "fruit",[
+            "raspBerries",
+            "mushroom",
+            "blueBerries",
+            ""
+        ],
+        "meat",[
+
+        ],
+        ""
+    ],
+    "ingrediants":[
+        "ore",[
+            "iron",
+            "silver",
+            "copper",
+            "blackMetal",
+            "tin"
+        ]
+    ],
+    "skills":[
+        "unarmed",
+        "run",
+        "jump",
+        "clubs",
+        "blocking",
+        "swim",
+        "bows",
+        "axes",
+        "woodCutting",
+        "sneak",
+        "spears",
+        "pickAxes"
+    ],
+    "trophies":[
+        "",
+        "",
+        "",
+        "",
+        "",
+        "",
+        "",
+        "",
+        "",
+        "",
+        "",
+        ""
+
+    ],
+    "biomes":[
+        "meadows",
+        "blackForest",
+        "swamp"
+    ]
+
+}
