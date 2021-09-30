@@ -57,16 +57,29 @@ print(f"The area of the circle is:",area_of_circle,"cm^2",'\n')
 
 
 #===============================
-#float items
+#4outputs from 1 input
 #===============================
-
-
 print('==============================================')
-print('this is going to be the results as a decimal')
+print('last section')
 print('==============================================','\n')
 
+value = float(input('give me a number...'))
+
+area_for_square = value * value
+area_for_circle = math.pi * (value * value)
+volume_of_cube = value ** 3
+volume_of_sphere = (4 / 3) * math.pi * (value ** 3)
+
+
+
+#square stuff
+print(f"The area of the square is: ",area_for_square,"cm^2",'\n')
+
+#circle stuff
+print(f"The area of the square is: ",area_for_circle,"cm^2",'\n')
 
 #cube stuff
-square_length = float(input("What is the length of a side of the square? (in cm) "))
-area_of_square = square_length ** 3
-print(f"The area of the square is: ",area_of_square,"cm^2",'\n')
+print(f"The area of the square is: ",volume_of_cube,"cm^2",'\n')
+
+#sphere stuff
+print(f"The area of the square is: ",volume_of_sphere,"cm^2",'\n')
