@@ -10,4 +10,3 @@ print("you have", number_of_egg_cartons * 12,"eggs","\n")
 number_of_cookies = int(input("how many cookies do you have? "))
 number_of_people = int(input("How many people are there? "))
 print("Each person may have",number_of_cookies / number_of_people,"cookies","\n")
-
