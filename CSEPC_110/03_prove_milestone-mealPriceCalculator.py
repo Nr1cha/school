@@ -36,8 +36,8 @@ total_price_of_meal = subtotal + sales_tax
 print("childs meal subtotal$",number_of_children * childs_meal_float)
 print("adult meal subtotal$",number_of_adults * adults_meal_float)
 print("Subtotal: $",subtotal)
-print("sales tax$",sales_tax )
-print("meals total including sales tax$",total_price_of_meal)
+print("sales tax$",round(sales_tax,2))
+print("meals total including sales tax$",round(total_price_of_meal,2))
 
 user_input_amount = float(input("what is the payment amount? "))
-print("change: $", user_input_amount - total_price_of_meal)
+print("change: $",round(user_input_amount - total_price_of_meal,2))
