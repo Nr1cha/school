@@ -13,3 +13,9 @@ float() converts numbers or strings to numbers with decimal places
 input always returns a string. even if the input is a number. 
 
 is the item in a variable a string or an integer? 
+round()
+
+## Week 4
+
+
+
