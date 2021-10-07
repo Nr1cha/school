@@ -27,11 +27,11 @@ velocity = float(input("The velocity after 10.0 seconds is: ", "m/s"))
 #
 #
 #MATH STUFF
-m = Mass
+m = Mass #
 
-g = Gravity
+g = Gravity #
 
-t = Time
+t = Time #
 
 p = Density
 
