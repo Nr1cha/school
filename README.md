@@ -19,3 +19,9 @@ round()
 
 
 
+## Week 5
+``
+if condition:
+    then-stuff-goes-here
+else: 
+    the-otherwise-stuff-goes-here
