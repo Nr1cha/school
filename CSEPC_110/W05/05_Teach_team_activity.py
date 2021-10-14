@@ -29,29 +29,25 @@
 # in each block, set this variable to the appropriate value. 
 # Finally, after the whole series of if-elif-else statements, have a single print statement that prints the letter grade once
 
-a = A
-b = B
-c = C
-d = D
-f = F
 
 grade_percentage = int(input("What is your grade percentage? "))
+letter = ""
 
-#SCORE OF 90
 if grade_percentage >= 90:
-    print("Congradulations, you passed with your score of", grade_percentage,"your grade is", a)
+    letter = "A"
+elif grade_percentage >= 80:
+    letter = "B"
+elif grade_percentage >= 70:
+    letter = "C"
+elif grade_percentage >= 60:
+    letter = "D"
 else:
-    print("your score was", grade_percentage, "with a bit more practice you can get a passing grade.","\n")
+    letter = "F"
+print(f"Your grade is: {letter}")
 
-#SCORE OF 80
-if grade_percentage >= 80:
-    print("Congradulations, you passed with your score of", grade_percentage,"your grade is", b)
-else:
-    print("your score was", grade_percentage, "with a bit more practice you can get a passing grade.","\n")
+#=======================
 
-
-#SCORE OF 70
 if grade_percentage >= 70:
-    print("Congradulations, you passed with your score of", grade_percentage,"your grade is", c)
+    print("Congrats, you passed the course!")
 else:
-    print("your score was", grade_percentage, "with a bit more practice you can get a passing grade.","\n")
+    print("keep going, you got this")
