@@ -32,6 +32,8 @@
 
 grade_percentage = int(input("What is your grade percentage? "))
 letter = ""
+sign = ""
+last_digit = grade_percentage % 10
 
 if grade_percentage >= 90:
     letter = "A"
@@ -51,3 +53,27 @@ if grade_percentage >= 70:
     print("Congrats, you passed the course!")
 else:
     print("keep going, you got this")
+
+# stretch challenge 1
+
+if last_digit >= 7:
+    sign = "+"
+elif last_digit < 3:
+    sign = "-"
+else:
+    sign = ""
+
+# Stretch Challenge 2
+if grade_percentage >= 93:
+    sign = ""
+
+# Stretch Challenge 3
+if letter == "F":
+    sign = ""
+
+print(f"Your letter grade is: {letter}{sign}")
+
+if grade_percentage >= 70:
+    print("Congratulations! You passed the class!")
+else:
+    print("Keep going, you got this")
