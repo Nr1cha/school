@@ -1,0 +1,13 @@
+ascii-magic==1.6
+astroid==2.4.2
+autopep8==1.5.7
+colorama==0.4.4
+isort==5.6.3
+lazy-object-proxy==1.4.3
+mccabe==0.6.1
+Pillow==8.3.2
+pycodestyle==2.8.0
+pylint==2.6.0
+six==1.15.0
+toml==0.10.1
+wrapt==1.12.1
