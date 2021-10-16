@@ -1,30 +1,32 @@
+from os.path import dirname, join
+current_dir = dirname(__file__)
 import ascii_magic
 
-death = ascii_magic.from_image_file("skull.jpeg",
+death = ascii_magic.from_image_file(join(current_dir, "./skull.jpeg"),
                                     columns=60,
                                     width_ratio=2,
                                     )
 
-answer = input("would you like to playa game? (yes/no) ")
+answer = input("would you like to playa game? YES or NO ")
 
 if answer.lower().strip() == "yes":
 
-    weapon = input("You awake and find yourself in a dark and thick forested woods on a foggy night, before going on an adventure you must choose a weapon for protection. Which do you choose? (sword/wand) ").lower().strip()
+    weapon = input("You awake and find yourself in a dark and thick forested woods on a foggy night, before going on an adventure you must choose a weapon for protection. Which do you choose, SWORD or WAND? ").lower().strip()
     if weapon == "sword" \
             or "wand":
         print("")
         answer = input(
-            "You encounter a deadly troll, you have two options, you can either risk your life and try to defeat the troll or flee. (fight/flee) ")
-        if answer == "fight":
+            "You encounter a deadly troll, you have two options, you can either risk your life and try to defeat the troll or flee. FIGHT or FLEE? ")
+        if answer.lower() == "fight":
             print(
-                f"The troll swings his heavy club over your head, barely missing your neck. You can feel the goosebumps on your skin rise. You take your {weapon}, rising it directly over your head...")
-            if weapon == "sword":
+                f"The troll swings his heavy club over your head, barely missing your neck. You can feel the goosebumps on your skin rise. You take your {weapon.lower()}, rising it directly over your head...")
+            if weapon.lower() == "sword":
                 print("Your attack does no damage to the massive troll. The club comes at you again, this time landing directly upon your head.")
                 print(f"You have died. Try again.\n{death}")
             else:
                 spell = input(
-                    "What spell would you like to cast? (stun/attack)")
-                if spell == "stun":
+                    "What spell would you like to cast, STUN or ATTACK?")
+                if spell.lower() == "stun":
                     print(
                         "The troll freezes in his tracks. You consider this a win and head home.")
                 else:
@@ -38,8 +40,8 @@ if answer.lower().strip() == "yes":
             print("Thinking how odd of a sign that would be, you decide 'why not, seems nice', \nIn it you find a mess of Gold scattered about and a low breeze of air that seems to get stronger as you traverse deeper into the cave. ")
             print("As you round the corner, you find a sleeping dragon")
             print("")
-            answer = input("After picking up some gold, you decide it's time to leave, upon seeing the dragon move as if close to waking up, you think to yourself, \n'should i run or sneak out'? (run/sneak) ")
-            if answer == "run":
+            answer = input("After picking up some gold, you decide it's time to leave, upon seeing the dragon move as if close to waking up, you think to yourself, \n'should i run or sneak out'? RUN or SNEAK ")
+            if answer.lower() == "run":
                 print("")
                 print(
                     "The dragon wakes up and sees you running. Upon spewing fire all around you, you turn into a pile of ash.")
