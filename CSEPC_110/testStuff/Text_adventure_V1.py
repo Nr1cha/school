@@ -18,11 +18,11 @@ if answer.lower().strip() == "yes":
         answer = input(
             "You encounter a deadly troll, you have two options, you can either risk your life and try to defeat the troll or flee. FIGHT or FLEE? ")
         if answer.lower() == "fight":
-            print(
-                f"The troll swings his heavy club over your head, barely missing your neck. You can feel the goosebumps on your skin rise. You take your {weapon.lower()}, rising it directly over your head...")
+            print(f"The troll swings his heavy club over your head, barely missing your neck. You can feel the goosebumps on your skin rise. You take your {weapon}, rising it directly over your head...")
             if weapon.lower() == "sword":
                 print("Your attack does no damage to the massive troll. The club comes at you again, this time landing directly upon your head.")
                 print(f"You have died. Try again.\n{death}")
+
             else:
                 spell = input(
                     "What spell would you like to cast, STUN or ATTACK?")
