@@ -25,3 +25,15 @@ if condition:
     then-stuff-goes-here
 else: 
     the-otherwise-stuff-goes-here
+
+
+## Week 06
+using AND instead of nesting IF statements
+
+Boolian variables as flags
+https://www.youtube.com/watch?v=IBOHc87yFYw&list=PLlrxD0HtieHhS8VzuMCfQD4uJ9yne1mE6&index=24&ab_channel=MicrosoftDeveloper
+
+<!-- complex conditions -->
+https://www.youtube.com/watch?v=Iui6K2STtbA&list=PLlrxD0HtieHhS8VzuMCfQD4uJ9yne1mE6&index=25&ab_channel=MicrosoftDeveloper
+
+complex conditions. 
