@@ -9,7 +9,7 @@ should_loan = False
 #create a boolean variable
 if loan_size >= 5:
     if credit_history and income >= 7:
-        should_loan = True
+        should_loan = True 
     elif credit_history or income >= 7:
         if down_payment >= 5: 
             should_loan = True
