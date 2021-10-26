@@ -42,8 +42,7 @@ if answer.lower() == "yes":
                 print(f"You have died. Try again.")
             #WIZARD PART
             else:
-                spell = input(
-                    "What spell would you like to cast, STUN or ATTACK?")
+                spell = input("What spell would you like to cast, STUN or ATTACK?")
                 if spell.lower() == "stun":
                     print("The troll freezes in his tracks. You consider this a win and head home.")
                 else:
