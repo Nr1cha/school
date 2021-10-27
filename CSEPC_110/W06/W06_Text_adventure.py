@@ -57,11 +57,23 @@ if answer.lower() == "yes":
             print("As you round the corner, you find a sleeping dragon")
             print("")
             #RUN AND DEATH PART
-            answer = input("After picking up some gold, you decide it's time to leave, upon seeing the dragon move as if close to waking up, you think to yourself, \n'should i run or sneak out'? RUN or SNEAK ")
+            answer = input("After picking up some gold, you decide it's time to leave, upon seeing the dragon move as if close to waking up, you think to yourself, \n'should i run or sneak out'? RUN, SNEAK or WAIT: ")
             if answer.lower() == "run":
                 print("")
                 print("The dragon wakes up and sees you running. Upon spewing fire all around you, you turn into a pile of ash.")
                 print("you have died, better luck on the next respawn")
+            if answer.lower() == "wait":
+                    print("you wait till night, as you ready yourself to leave you find the dragon is gone.")
+                    print("you make it to the hill right over the village and find that the dragon is terrorizing the people")
+                    print("you can choose to assist and rally the people to defeat the dragon or wait till all is finished and see if there is anything left in the morning")
+                    answer = input("ASSIST or COWER: ")
+                    if answer.lower() == "assist":
+                        print("you rally what people you can find and defeat the dragon, the land prospers by the riches in the mountain and you as well.")
+                        print("good job adventurer you did it!")
+                    if answer.lower() == "cower":
+                        print("you wait till morning on the outskirts, you return to the town and find that most are all killed.")
+                        print("there is no way to obtain riches and as you leave, you see the dragon not far behind you ready to strike. unable to escape, you die wishing you had chosen to be a little more brave before")
+                        print("you die")
             else:
             #SNEAK ESCAPE PART
                 print("")
