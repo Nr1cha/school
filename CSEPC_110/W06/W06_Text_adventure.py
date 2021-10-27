@@ -1,3 +1,5 @@
+import os
+os.system("cls")
 # 1 YES
     ##FIGHTER##
     # 1.2 SWORD
@@ -25,6 +27,14 @@
                 # SNEAK
                     #WIN
 # 2 NO
+Black = "\u001b[30m."
+Red = "\u001b[31m."
+Green = "\u001b[32m."
+Yellow = "\u001b[33m."
+Blue = "\u001b[34m."
+Magenta = "\u001b[35m."
+Cyan = "\u001b[36m."
+White = "\u001b[37m"
 
 #BEGINNING OF STORY
 answer = input("would you like to playa game? YES or NO ")
@@ -39,7 +49,7 @@ if answer.lower() == "yes":
             print(f"The troll swings his heavy club over your head, barely missing your neck. You can feel the goosebumps on your skin rise. You take your {weapon}, rising it directly over your head...")
             if weapon.lower() == "sword":
                 print("Your attack does no damage to the massive troll. The club comes at you again, this time landing directly upon your head.")
-                print(f"You have died. Try again.")
+                print(f"{Red} You have died adventurer. Try again.")
             #WIZARD PART
             else:
                 spell = input("What spell would you like to cast, STUN or ATTACK?")
@@ -47,7 +57,7 @@ if answer.lower() == "yes":
                     print("The troll freezes in his tracks. You consider this a win and head home.")
                 else:
                     print("Your attack does no damage to the massive troll. The club comes at you again, this time landing directly upon your head.")
-                    print("You have died. Try again.")
+                    print(f"{Red}You have died wizard. Try again.")
         else:
             # MOUNTAIN SECTION
             print("")
@@ -61,7 +71,7 @@ if answer.lower() == "yes":
             if answer.lower() == "run":
                 print("")
                 print("The dragon wakes up and sees you running. Upon spewing fire all around you, you turn into a pile of ash.")
-                print("you have died, better luck on the next respawn")
+                print(f"{Red}you have died, better luck on the next respawn")
             if answer.lower() == "wait":
                     print("you wait till night, as you ready yourself to leave you find the dragon is gone.")
                     print("you make it to the hill right over the village and find that the dragon is terrorizing the people")
@@ -73,7 +83,7 @@ if answer.lower() == "yes":
                     if answer.lower() == "cower":
                         print("you wait till morning on the outskirts, you return to the town and find that most are all killed.")
                         print("there is no way to obtain riches and as you leave, you see the dragon not far behind you ready to strike. unable to escape, you die wishing you had chosen to be a little more brave before")
-                        print("you die")
+                        print(f"{Red}you die")
             else:
             #SNEAK ESCAPE PART
                 print("")
