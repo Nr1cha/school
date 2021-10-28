@@ -1,5 +1,5 @@
 import os
-os.system("cls")
+os.system("clear") #use "cls" for a windows machine
 # 1 YES
     ##FIGHTER##
     # 1.2 SWORD
@@ -13,6 +13,15 @@ os.system("cls")
                     #DEATH
                 # SNEAK
                     #WIN
+                # WAIT
+                    #MOVE ON TO VILLAGE
+                    
+                    ##VILLAGE##
+                    
+                    #ASSIST
+                        #WIN THE GAME
+                    #COWER
+                        #DIE
 
     ##WIZARD##
     # 1.2 WAND
@@ -26,14 +35,23 @@ os.system("cls")
                     #DEATH
                 # SNEAK
                     #WIN
+                # WAIT
+                    #MOVE ON TO VILLAGE
+                    
+                    ##VILLAGE##
+                    #ASSIST
+                        #WIN THE GAME
+                    #COWER
+                        #DIE
+
 # 2 NO
-Black = "\u001b[30m."
-Red = "\u001b[31m."
-Green = "\u001b[32m."
-Yellow = "\u001b[33m."
-Blue = "\u001b[34m."
-Magenta = "\u001b[35m."
-Cyan = "\u001b[36m."
+Black = "\u001b[30m"
+Red = "\u001b[31m"
+Green = "\u001b[32m"
+Yellow = "\u001b[33m"
+Blue = "\u001b[34m"
+Magenta = "\u001b[35m"
+Cyan = "\u001b[36m"
 White = "\u001b[37m"
 
 #BEGINNING OF STORY
@@ -41,20 +59,20 @@ answer = input("would you like to playa game? YES or NO ")
 
 if answer.lower() == "yes":
 
-    weapon = input("You awake and find yourself in a dark and thick forested woods on a foggy night, before going on an adventure you must choose a weapon for protection. Which do you choose, SWORD or WAND? ").lower()
+    weapon = input(f"You awake and find yourself in a dark and thick forested woods on a foggy night, before going on an adventure you must choose a weapon for protection.\nWhich do you choose, {Yellow}SWORD{White} or {Cyan}WAND?{White} ").lower()
     if weapon == "sword" \
             or "wand":
-        answer = input("You encounter a deadly troll, you have two options, you can either risk your life and try to defeat the troll or flee. FIGHT or FLEE? ")
+        answer = input("\nYou encounter a deadly troll, you have two options, you can either risk your life and try to defeat the troll or flee. FIGHT or FLEE? ")
         if answer.lower() == "fight":
-            print(f"The troll swings his heavy club over your head, barely missing your neck. You can feel the goosebumps on your skin rise. You take your {weapon}, rising it directly over your head...")
+            print(f"\nThe troll swings his heavy club over your head, barely missing your neck. You can feel the goosebumps on your skin rise. \nYou take your {weapon}, rising it directly over your head...")
             if weapon.lower() == "sword":
                 print("Your attack does no damage to the massive troll. The club comes at you again, this time landing directly upon your head.")
-                print(f"{Red} You have died adventurer. Try again.")
+                print(f"{Red}\nYou have died adventurer. Try again.\n")
             #WIZARD PART
             else:
-                spell = input("What spell would you like to cast, STUN or ATTACK?")
+                spell = input("What spell would you like to cast, STUN or ATTACK? ")
                 if spell.lower() == "stun":
-                    print("The troll freezes in his tracks. You consider this a win and head home.")
+                    print(f"The troll {Blue}freezes{White} in his tracks. You consider this a win and head home.")
                 else:
                     print("Your attack does no damage to the massive troll. The club comes at you again, this time landing directly upon your head.")
                     print(f"{Red}You have died wizard. Try again.")
@@ -71,7 +89,7 @@ if answer.lower() == "yes":
             if answer.lower() == "run":
                 print("")
                 print("The dragon wakes up and sees you running. Upon spewing fire all around you, you turn into a pile of ash.")
-                print(f"{Red}you have died, better luck on the next respawn")
+                print(f"{Red}you have died, better luck on the next time")
             if answer.lower() == "wait":
                     print("you wait till night, as you ready yourself to leave you find the dragon is gone.")
                     print("you make it to the hill right over the village and find that the dragon is terrorizing the people")
@@ -79,7 +97,7 @@ if answer.lower() == "yes":
                     answer = input("ASSIST or COWER: ")
                     if answer.lower() == "assist":
                         print("you rally what people you can find and defeat the dragon, the land prospers by the riches in the mountain and you as well.")
-                        print("good job adventurer you did it!")
+                        print(f"{Green} great job adventurer you did it!")
                     if answer.lower() == "cower":
                         print("you wait till morning on the outskirts, you return to the town and find that most are all killed.")
                         print("there is no way to obtain riches and as you leave, you see the dragon not far behind you ready to strike. unable to escape, you die wishing you had chosen to be a little more brave before")
