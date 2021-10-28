@@ -45,6 +45,9 @@ os.system("clear") #use "cls" for a windows machine
                         #DIE
 
 # 2 NO
+u = "\033[4m"
+b = "\033[1m"
+i = "\033[3m"
 Black = "\u001b[30m"
 Red = "\u001b[31m"
 Green = "\u001b[32m"
@@ -53,13 +56,14 @@ Blue = "\u001b[34m"
 Magenta = "\u001b[35m"
 Cyan = "\u001b[36m"
 White = "\u001b[37m"
+Reset = "\u001b[0m"
 
 #BEGINNING OF STORY
-answer = input("would you like to playa game? YES or NO ")
+answer = input(f"would you like to playa game? {b}YES{Reset} or {b}NO{Reset} ")
 
 if answer.lower() == "yes":
 
-    weapon = input(f"You awake and find yourself in a dark and thick forested woods on a foggy night, before going on an adventure you must choose a weapon for protection.\nWhich do you choose, {Yellow}SWORD{White} or {Cyan}WAND?{White} ").lower()
+    weapon = input(f"You awake and find yourself in a dark and thick forested woods on a foggy night, before going on an adventure you must choose a weapon for protection.\nWhich do you choose, {b}{Yellow}SWORD{Reset} or {b}{Cyan}WAND?{Reset} ").lower()
     if weapon == "sword" \
             or "wand":
         answer = input("\nYou encounter a deadly troll, you have two options, you can either risk your life and try to defeat the troll or flee. FIGHT or FLEE? ")
@@ -87,6 +91,7 @@ if answer.lower() == "yes":
             #RUN AND DEATH PART
             answer = input("After picking up some gold, you decide it's time to leave, upon seeing the dragon move as if close to waking up, you think to yourself, \n'should i run or sneak out'? RUN, SNEAK or WAIT: ")
             if answer.lower() == "run":
+                os.system("clear")
                 print("")
                 print("The dragon wakes up and sees you running. Upon spewing fire all around you, you turn into a pile of ash.")
                 print(f"{Red}you have died, better luck on the next time")
@@ -101,11 +106,11 @@ if answer.lower() == "yes":
                     if answer.lower() == "cower":
                         print("you wait till morning on the outskirts, you return to the town and find that most are all killed.")
                         print("there is no way to obtain riches and as you leave, you see the dragon not far behind you ready to strike. unable to escape, you die wishing you had chosen to be a little more brave before")
-                        print(f"{Red}you die")
+                        os.system("clear")
+                        print(f"{Red}you die\n")
             else:
             #SNEAK ESCAPE PART
-                print("")
-                print("you make it out alive without disturbing the dragon. in a low valley you find a town to exchange your gold for riches and then the story ends ")
+                print(f"{Reset}you make it out alive without disturbing the dragon. in a low valley you find a town to exchange your gold for riches and then the story ends ")
                 print("keep watch for more DLC (which is free BTW, none of that microtransactiony fluff) to see new features and stories.")
     else:
         print("well that sucks")
