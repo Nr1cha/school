@@ -1,4 +1,5 @@
 import os 
+os.system("clear")
 # picture = os.path.join(os.getcwd(),'CSEPC_110/W07/beach.jpg')
 from PIL import Image
 print("the library is working correctly")
@@ -17,10 +18,10 @@ print(pixels_original[200, 100])
 #first 'x' in the sequence is starting on the left side of the image being 0
 #the 2nd 'x' in the sequence is how far(in pixels) right to go
 
-for y in range (0, 600):
-    for x in range(0, 800):
+for y in range (0, 300):
+    for x in range(0, 400):
         (r, g, b) = pixels_original[x, y]
-        pixels_original[x, y] = (2, g, 255)
+        pixels_original[x, y] = (10, g, 200)
 
 image_original.show()
 # image_original.save('newThing.jpg')
