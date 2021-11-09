@@ -40,10 +40,10 @@ pixels_new = image_combined.load()
 #LOOP LOGIC
 for y in range (0, height):
     for x in range(0, width):
-        (r, g, b) = FG_pixels[x, y]
-        if g >= r + 40 and g >= b + 40:
-            (r, g, b) = BG_pixels[x, y]
-        pixels_new[x,y] = (r, g, b)
+        (red, green, blue) = FG_pixels[x, y]
+        if green >= red + 40 and green >= blue + 40:
+            (red, green, blue) = BG_pixels[x, y]
+        pixels_new[x,y] = (red, green, blue)
 
 # FG_image.show()
 # BG_image.show()
