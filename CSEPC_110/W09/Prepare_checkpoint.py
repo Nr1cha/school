@@ -2,9 +2,9 @@ friends = []
 name = None
 names_of_friends = "Type the name of a friend: "
 #LOOP STUFF
-while name != "end":
+while name != 0 and name != "0":
     name = input(names_of_friends)
-    if name != "end":
+    if name != 0 and name != "0":
         friends.append(name)
 print()
 print("your friends are: ")
