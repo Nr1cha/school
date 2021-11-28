@@ -64,10 +64,10 @@ with open("life-expectancy.csv") as life_expectency_file:
 
     life_average_age = sum(array_expectancy) / len(array_expectancy)
 
-    print(f"The overall min life expectancy is: {min_life_expectancy} from {min_country} in {min_life_expectancy_year}")
-    print(f"The overall max life expectancy is: {max_life_expectancy} from {max_country} in {max_life_expectancy_year}")
+    print(f"The overall min life expectancy is: {Green}{min_life_expectancy}{Reset} from {u}{min_country}{Reset} in {Cyan}{min_life_expectancy_year}{Reset}")
+    print(f"The overall max life expectancy is: {Green}{max_life_expectancy}{Reset} from {u}{max_country}{Reset} in {Cyan}{max_life_expectancy_year}{Reset}")
     print("")
-    print(f"For the year {u}{user_choice}{Reset}:")
+    print(f"For the year {Cyan}{user_choice}{Reset}:")
     print(f"The average life expectancy across all countries was {Green}{life_average_age:.2f}{Reset}")
     print(f"The max life expectancy was in {u}{max_country2}{Reset} with {Green}{max_expectancy:.2f}{Reset}")
     print(f"The min life expectancy was in {u}{min_country1}{Reset} with {Green}{min_expectancy:.2f}{Reset}")
