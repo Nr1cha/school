@@ -33,9 +33,54 @@ max_expectancy = None
 max_country2 = None
 #array
 array_expectancy = []
+list_of_countries = [] # a list of all country entries
 
-with open("..\W11\life-expectancy.csv") as life_expectency_file:
+
+with open("../W11/life-expectancy.csv") as life_expectency_file:
     user_choice = input("Enter the year of interest: ")
+    for line in life_expectency_file:
+        if line.startswith("Entity"): continue;
+        clean_line = line.split(",")
+#positions
+        entity = clean_line[0]
+        list_of_countries.append(entity)
+        code = clean_line[1]
+        year = clean_line[2]
+        expectency = float(clean_line[3])
+#if statements
+        if user_choice == year:
+            array_expectancy.append(float(expectency)) # adding expectency to array outside of loop
+# LOGIC STUFF
+        if user_choice == year and (min_expectancy == None or expectency < min_expectancy):
+            min_expectancy = expectency
+            min_country1 = entity
+
+        if user_choice == year and (max_expectancy == None or expectency > max_expectancy):
+            max_expectancy = expectency
+            max_country2 = entity
+
+        if min_life_expectancy == None or expectency < min_life_expectancy:
+            min_life_expectancy = expectency
+            min_life_expectancy_year = year
+            min_country = entity
+        
+        if max_life_expectancy == None or expectency > max_life_expectancy:
+            max_life_expectancy = expectency 
+            max_life_expectancy_year = year
+            max_country = entity
+
+
+
+
+    #=========================================
+    display_of_countries = list(set(list_of_countries)) #this takes and sorts out into just unique items
+    #=========================================
+    print(f"Below are the countries to select from:")
+    print(f"{display_of_countries}")
+    select_country = input("Please select a country from the list: ")
+    print()
+
+#SECOND LOOP
     for line in life_expectency_file:
         if line.startswith("Entity"): continue;
         clean_line = line.split(",")
@@ -65,6 +110,13 @@ with open("..\W11\life-expectancy.csv") as life_expectency_file:
             max_life_expectancy = expectency 
             max_life_expectancy_year = year
             max_country = entity
+
+
+
+
+
+
+
 
     life_average_age = sum(array_expectancy) / len(array_expectancy)
 
