@@ -94,16 +94,10 @@ with open("../W11/life-expectancy.csv") as life_expectency_file:
     print(f"{display_of_countries}")
     select_country = input("Please select a country from the list: ")
     print()
-#SECOND LOOP
-    for line in life_expectency_file:
-        if line.startswith("Entity"): continue;
-        clean_line = line.split(",")
-#positions
-        country = clean_line[0]
-        code = clean_line[1]
-        year = clean_line[2]
-        life_expectency = float(clean_line[3])
 #if statements
+    for user_country in select_country:
+        
+#!user choice stuff
         if user_choice == year:
             array_life_expectancy.append(float(life_expectency)) # adding life_expectency to array outside of loop
 # LOGIC STUFF
@@ -115,6 +109,8 @@ with open("../W11/life-expectancy.csv") as life_expectency_file:
             max_expectancy = life_expectency
             max_country2 = country
 
+
+#!life expectency stuff
         if min_life_expectancy == None or life_expectency < min_life_expectancy:
             min_life_expectancy = life_expectency
             min_life_expectancy_year = year
