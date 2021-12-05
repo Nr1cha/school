@@ -73,6 +73,7 @@ with open("life-expectancy.csv", encoding="utf-8") as life_expectency_file:
             max_country = country
 
     life_average_age = sum(array_life_expectancy) / len(array_life_expectancy)
+    print()
     print(f"The overall min life expectancy is: {Green}{min_life_expectancy}{Reset} from {u}{min_country}{Reset} in {Cyan}{min_life_expectancy_year}{Reset}")
     print(f"The overall max life expectancy is: {Green}{max_life_expectancy}{Reset} from {u}{max_country}{Reset} in {Cyan}{max_life_expectancy_year}{Reset}")
     print("")
@@ -86,8 +87,10 @@ with open("life-expectancy.csv", encoding="utf-8") as life_expectency_file:
     display_of_countries = list(set(list_of_countries)) #this takes and sorts out into just unique items
 
     print("Below are the countries to select from:")
+    print()
 
     cli.columnize(display_of_countries, displaywidth=size[0])
+    print()
     select_country = input("Please select a country from the list: ")
     print()
     array_life_expectancy = []
