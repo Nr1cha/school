@@ -1,5 +1,6 @@
 import os
 os.system("clear")
+wind_speed_array = []
 
 
 #instructions for creating a function
@@ -9,16 +10,18 @@ os.system("clear")
 
 #01 
 #Write a function to calculate and return the wind chill based on a given temperature and wind speed.
+
 def Calculate_wind_chill(temperature, wind_speed):
-    wind_chill = 35.74 + 0.6215 * temperature - 35.75 * (wind_speed**0.16) + 0.4275 * temperature * (wind_speed**0.16)
-    
-    return wind_chill
+    while wind_speed < 60:
+        wind_chill = 35.74 + 0.6215 * temperature - 35.75 * (wind_speed**0.16) + 0.4275 * temperature * (wind_speed**0.16)
 
-input_temperature = 8
-input_windspeed = 5
-output = Calculate_wind_chill(input_temperature, input_windspeed)
+        return wind_chill
 
-print(f"At temperature {input_temperature}F, and windspeed {input_windspeed} mph, the windchill is:  {output:.2f}F")
+    input_temperature = 8
+    input_windspeed = 5
+    output = Calculate_wind_chill(input_temperature, input_windspeed)
+
+    print(f"At temperature {input_temperature}F, and windspeed {input_windspeed} mph, the windchill is:  {output:.2f}F")
 
 
 
