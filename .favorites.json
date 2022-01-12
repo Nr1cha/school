@@ -1,0 +1,18 @@
+[
+    {
+        "type": "Directory",
+        "name": "/Users/nick/Documents/GitHub/school/CSE_111/W01",
+        "parent_id": null,
+        "workspaceRoot": "/Users/nick/Documents/GitHub/school",
+        "workspacePath": "CSE_111/W01",
+        "id": "reTwALIcugPWUj2N"
+    },
+    {
+        "type": "File",
+        "name": "/Users/nick/Documents/GitHub/school/CSE_111/W01/heart_rate.py",
+        "parent_id": null,
+        "workspaceRoot": "/Users/nick/Documents/GitHub/school",
+        "workspacePath": "CSE_111/W01/heart_rate.py",
+        "id": "2YXAqzK640HZQVjy"
+    }
+]
