@@ -6,18 +6,15 @@ sales_tax_percent = 0.06
 
 current_date = datetime.now()
 weekday = current_date.weekday()
+subtotal = 0
+price = None
 
+while price != 0:
+    price = float(input("Enter the price: "))
+    if price != 0:
+        item_num = int(input("Enter the amount of items: "))
+        subtotal += price * item_num
 
-# subtotal = float(input("Please enter the subtotal: "))
-# sales_tax = float(input("Sales tax amount: "))
-
-subtotal = float(input("Please enter the subtotal: "))
-if subtotal >= 50 and (weekday == 1 or weekday == 2):
-    discount = round(subtotal * discount_percent)
-    print(f"Discount amount: {discount:.2f}")
-    subtotal -= discount
-else:
-    print("No discount for today. sorry.")
 
 if weekday == 1 or weekday == 2:
     if subtotal < 50:
