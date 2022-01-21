@@ -4,21 +4,6 @@ from datetime import datetime
 
 
 def main():
-    # Formatting
-    u = "\033[4m"
-    b = "\033[1m"
-    i = "\033[3m"
-    Black = "\u001b[30m"
-    Red = "\u001b[31m"
-    Green = "\u001b[32m"
-    Yellow = "\u001b[33m"
-    Blue = "\u001b[34m"
-    Magenta = "\u001b[35m"
-    Cyan = "\u001b[36m"
-    White = "\u001b[37m"
-    Reset = "\u001b[0m"
-
-
     gender = input('What is your gender: (f / m): ')
     birth_str = input('What is your brithday in this format: YYYY-MM-DD: ')
     pounds = float(input('What is your weight in pounds? '))
@@ -42,11 +27,11 @@ def main():
     # Call the basal_metabolic_rate function.
     bmr = int(basal_metabolic_rate(gender, kilograms, centimeters, years))
 
-    print(f"Age (years): {b}{years}{Reset}")
-    print(f'Weight (kg): {Blue}{kilograms:.2f}{Reset}')
-    print(f'Height (cm): {Blue}{centimeters:.1f}{Reset}')
-    print(f'Body mass index: {Green}{bmi:.1f}{Reset}')
-    print(f'Basal metabolic rate (kcal/day): {Green}{bmr}{Reset}')
+    print(f"Age (years): {years}")
+    print(f'Weight (kg): {kilograms:.2f}')
+    print(f'Height (cm): {centimeters:.1f}')
+    print(f'Body mass index: {bmi:.1f}')
+    print(f'Basal metabolic rate (kcal/day): {bmr}')
     
 
 def compute_age(birth_str):
