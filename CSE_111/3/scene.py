@@ -17,8 +17,7 @@ def main():
 
     # Call your drawing functions such
     # as draw_sky and draw_ground here.
-
-
+    draw_grid(canvas, scene_width, scene_height, 50)
 
     # Call the finish_drawing function
     # in the draw2d.py library.
@@ -27,7 +26,19 @@ def main():
 
 # Define your functions such as
 # draw_sky and draw_ground here.
+def draw_grid(canvas, width, height, interval):
+    #draw vertical line
+    lable_y = 15
+    for x in range(interval, width, interval):
+        draw_line(canvas, x, 0, x, height)
+        draw_text(canvas, x, lable_y, f"{x}")
 
+
+    # draw horizontal line
+    lable_x = 15
+    for y in range(interval, height, interval):
+        draw_line(canvas, 0, y, width, y)
+        draw_text(canvas, lable_x, y, f"{y}")
 
 
 # Call the main function so that
