@@ -109,3 +109,4 @@ dist
 
 # vscode environment
 .venv
+/stuff.md
