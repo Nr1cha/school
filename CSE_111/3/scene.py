@@ -1,23 +1,44 @@
 # Import the functions from the Draw 2-D library
 # so that they can be used in this program.
 '''Draw2d Documentation https://byui-cse.github.io/cse111-course/lesson03/draw2d.html'''
+from turtle import circle, width, window_height, window_width
 from draw2d import \
     start_drawing, draw_line, draw_oval, draw_arc, \
     draw_rectangle, draw_polygon, draw_text, finish_drawing
 
 
+
 def main():
     # Width and height of the scene in pixels
-    scene_width = 800
-    scene_height = 500
+    window_width = 800
+    window_height = 500
 
     # Call the start_drawing function in the draw2d.py library
     # which will open a window and create a canvas.
-    canvas = start_drawing("Scene", scene_width, scene_height)
+    canvas = start_drawing("Scene", window_width, window_height)
 
-    # Call your drawing functions such
-    # as draw_sky and draw_ground here.
-    draw_grid(canvas, scene_width, scene_height, 50)
+    # Call your drawing functions
+    # draw_sky 
+    draw_sky(canvas, window_width, window_height)
+
+    # # draw_ground
+    draw_ground(canvas, window_width, window_height)
+
+    # draw_pine_tree
+    # draw_pine_tree(canvas, 550, 150, 250)
+    # draw_pine_tree(canvas, 150,100,400 )
+    for x in range(100, 800, 100):
+        draw_pine_tree(canvas, x, 50, 280)
+        draw_circle(canvas, x, 100, 280)
+
+    # draw_cloud
+    # draw_cloud(canvas, 100, 150, 720)
+    for x in range(150, 750, 100):
+        draw_cloud(canvas, x, 410,450)
+        draw_cloud(canvas, 100, 425, 460)
+
+    # draw_grid
+    draw_grid(canvas, window_width, window_height, 50)
 
     # Call the finish_drawing function
     # in the draw2d.py library.
@@ -26,7 +47,57 @@ def main():
 
 # Define your functions such as
 # draw_sky and draw_ground here.
+
+def draw_sky(canvas, window_width, window_height):
+    """Draw the sky and all the objects in the sky."""
+    draw_rectangle(canvas, 0, window_height / 3,
+        window_width, window_height, width = 0, fill="sky blue")
+
+
+def draw_ground(canvas, window_width, window_height):
+    """Draw the ground and all the objects on the ground."""
+    draw_rectangle(canvas, 0, 0, window_width, window_height / 3, width = 0, fill="tan4" )
+
+
+def draw_pine_tree(canvas, center_x, bottom, height):
+    # draw the trunk of the tree
+    trunk_width = height / 10
+    trunk_height = height / 8
+    left_trunk = center_x - trunk_width / 2 
+    bottom_trunk = bottom
+    right_trunk = center_x + trunk_width / 2
+    trunk_top = bottom + trunk_height
+    draw_rectangle(canvas, left_trunk, bottom_trunk, right_trunk, trunk_top, width = 0, fill="saddleBrown")
+    
+    # draw skirt of tree
+    skirt_width = height / 2
+    skirt_left = center_x - skirt_width / 2
+    skirt_bottom = trunk_top
+    peak_x = center_x
+    peak_y = bottom + height
+    skirt_right = center_x + skirt_width / 2
+    draw_polygon(canvas, skirt_left, skirt_bottom, peak_x, peak_y, skirt_right, skirt_bottom, width = 0, fill="green4")
+    return trunk_top
+
+    # Draw circle
+    # circle_width = height / 2
+    # circle_left = center_x - circle_width / 2
+    # circle_bottom = trunk_top
+    # circle_x = center_x
+    # circle_y = bottom + height
+    # skirt_right = center_x + circle_width / 2
+    # draw_oval(canvas, circle_left, circle_bottom, circle_x, circle_y, width = 0, fill="gold1")
+
+def draw_circle(canvas, center_x, bottom, height):
+    circle_x = 325
+    circle_y = 300
+    circle_left = 370
+    circle_right= 370
+    draw_oval(canvas, circle_x, circle_y, circle_left, circle_right, width = 0, fill="gold1")
+
+
 def draw_grid(canvas, width, height, interval):
+
     #draw vertical line
     lable_y = 15
     for x in range(interval, width, interval):
@@ -39,6 +110,17 @@ def draw_grid(canvas, width, height, interval):
     for y in range(interval, height, interval):
         draw_line(canvas, 0, y, width, y)
         draw_text(canvas, lable_x, y, f"{y}")
+
+
+# Draw a row of circles.
+def draw_cloud(canvas,center_x, bottom, height):
+    cloud_width = height / 19
+    cloud_height = height / 19
+    cloud_left = center_x - cloud_width / .5
+    cloud_bottom = bottom
+    cloud_right = center_x + cloud_width / .5
+    cloud_top = bottom + cloud_height
+    draw_oval(canvas, cloud_left, cloud_bottom, cloud_right, cloud_top, width = 0, fill="ghostWhite" )
 
 
 # Call the main function so that
