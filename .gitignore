@@ -110,3 +110,7 @@ dist
 # vscode environment
 .venv
 /stuff.md
+.idea 
+CSE_111/.idea
+.DS_Store
+CSE_111/.DS_Store
