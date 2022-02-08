@@ -13,6 +13,7 @@ def make_full_name(given_name, family_name):
     full_name = f"{family_name}; {given_name}"
     return full_name
 
+
 def extract_family_name(full_name):
     """Extract and return the family name from a string in this form:
     "family_name; given_name". For example, if this function were
@@ -27,8 +28,9 @@ def extract_family_name(full_name):
     semicolon_index = full_name.index("; ")
 
     # Extract a substring from the full name and return it.
-    family_name = full_name[0 : semicolon_index]
+    family_name = full_name[0: semicolon_index]
     return family_name
+
 
 def extract_given_name(full_name):
     """Extract and return the given name from a string in this form:
@@ -44,5 +46,5 @@ def extract_given_name(full_name):
     semicolon_index = full_name.index("; ")
 
     # Extract a substring from the full name and return it.
-    given_name = full_name[semicolon_index + 2 : ]
+    given_name = full_name[semicolon_index + 2:]
     return given_name
