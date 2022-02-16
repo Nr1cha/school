@@ -1,4 +1,4 @@
-from sentences import get_determiner, get_noun, get_verb
+from sentences import get_determiner, get_noun, get_verb, get_preposition, get_prepositional_phrase
 import random
 import pytest
 
@@ -129,7 +129,7 @@ def test_get_verb():  # TODO
         assert word in verb_present
 
     verb_future = ["will drink", "will eat", "will grow", "will laugh", "will think", "will run", "will sleep",
-                   "will talk", "will walk", "will write"]
+                "will talk", "will walk", "will write"]
 
     # This loop will repeat the statements inside it 4 times.
     for _ in range(4):
@@ -141,5 +141,66 @@ def test_get_verb():  # TODO
         # is one of the words in the plural_determiners list.
         assert word in verb_future
 
+
+
+def test_get_preposition():
+    preposition_words = ["about", "above", "across", "after", "along",
+        "around", "at", "before", "behind", "below",
+        "beyond", "by", "despite", "except", "for",
+        "from", "in", "into", "near", "of",
+        "off", "on", "onto", "out", "over",
+        "past", "to", "under", "with", "without"]
+
+    split_word = get_preposition().split(' ')
+
+    word = split_word[0]
+
+    assert word in preposition_words
+
+def test_get_prepositional_phrase(): 
+    preposition_words = ["about", "above", "across", "after", "along",
+        "around", "at", "before", "behind", "below",
+        "beyond", "by", "despite", "except", "for",
+        "from", "in", "into", "near", "of",
+        "off", "on", "onto", "out", "over",
+        "past", "to", "under", "with", "without"]
+
+    single_nouns = ["bird", "boy", "car", "cat", "child", "dog", "girl", "man", "rabbit", "woman"]
+    plural_nouns = ["birds", "boys", "cars", "cats", "children", "dogs", "girls", "men", "rabbits", "women"]
+
+    single_determiners = ["a", "one", "the"] 
+    plural_determiners = ["two", "some", "many", "the"]
+
+
+    split_word = get_prepositional_phrase(1).split(' ')
+
+    preposition = split_word[0]
+    determiner =  split_word[1]
+    noun =  split_word[2]
+
+    assert preposition in preposition_words
+    assert determiner in single_determiners
+    assert noun in single_nouns
+
+
+    split_word = get_prepositional_phrase(0).split(' ')
+
+    preposition = split_word[0]
+    determiner =  split_word[1]
+    noun =  split_word[2]
+
+    assert preposition in preposition_words
+    assert determiner in plural_determiners
+    assert noun in plural_nouns
+
+    # single_prepositions = get_prepositional_phrase(1)
+    # for _ in range(4):
+    #     word = get_preposition(1)
+    #     assert word in single_prepositions
+
+    # plural_prepositions = get_prepositional_phrase(0)
+    # for _ in range(4):
+    #     word = get_preposition(0)
+    #     assert word in plural_prepositions
 
 pytest.main(["-v", "--tb=line", "-rN", __file__])
