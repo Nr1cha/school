@@ -96,7 +96,15 @@ def main():
 
 
 def print_death_age(people_dict):
-    """For each person in the people dictionary,
+      for person_key, person_list in people_dict.items():
+        name = person_list[NAME_INDEX]
+        birth_year=person_list[BIRTH_YEAR_INDEX]
+        death_year=person_list[DEATH_YEAR_INDEX]
+        age=death_year-birth_year
+
+        print(f'{name}, {age}')
+"""
+    For each person in the people dictionary,
     print the person's name and age at death.
 
     Parameter
@@ -105,7 +113,7 @@ def print_death_age(people_dict):
             person_key: [name, gender, birth_year, death_year]
     Return: nothing
     """
-    pass
+pass
 
 
 def count_genders(people_dict):
@@ -118,6 +126,18 @@ def count_genders(people_dict):
             person_key: [name, gender, birth_year, death_year]
     Return: nothing
     """
+    num_males = 0
+    for person_key, person_list in people_dict.items():
+        gender = person_list[GENDER_INDEX]
+        if gender == "M":
+            num_males += 1
+
+    num_people = len(people_dict)
+    num_females = num_people - num_males
+
+    print("Genders")
+    print(f"Number of males: {num_males}")
+    print(f"Number of females: {num_females}")
     pass
 
 
@@ -135,6 +155,27 @@ def print_marriages(marriages_dict, people_dict):
             person_key: [name, gender, birth_year, death_year]
     Return: nothing
     """
+    print("Marriages")
+    for marriage_key, marriage_list in marriages_dict.items():
+        husband_key = marriage_list[HUSBAND_KEY_INDEX]
+        wife_key = marriage_list[WIFE_KEY_INDEX]
+        wedding_year = marriage_list[WEDDING_YEAR_INDEX]
+
+
+        husband_list = people_dict[husband_key]
+        husband_name = husband_list[NAME_INDEX]
+        husband_birth = husband_list[BIRTH_YEAR_INDEX]
+
+
+        husband_age = wedding_year - husband_birth
+
+        wife_list = people_dict[wife_key]
+        wife_name = wife_list[NAME_INDEX]
+        wife_birth = wife_list[BIRTH_YEAR_INDEX]
+
+        wife_age = wedding_year - wife_birth
+        print(f"{husband_name} {husband_age}" \
+            f" > {wedding_year} < {wife_name} {wife_age}")
     pass
 
 
