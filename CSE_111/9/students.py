@@ -1,37 +1,35 @@
 import csv
 
 def main():
-    student_list = read_list("CSE_111/9/students.csv")
-    print(student_list)
-    next(student_list)
-    student_list.pop(0)
-    student_list.pop()
+    student_name = 1
+    i_index = 0
 
-    for i in range(len(student_list)):
-        if student_list[i] == "AB":
-            student_list[i] = "Alberta"
+    student_list = read_dict("students.csv", i_index)
+    user_input = input("what is your I# ? ")
 
-    count = student_list.count("Alberta")
-    print()
-    print(f"Alberta occurs {count} times in the modified list.")
-
+    if user_input in student_list:
+        value = student_list[user_input]
+        studentName = value[student_name]
+        print(studentName)
+    else:
+        print(f"No such student. ")
 
 
 
-
-def read_list(filename):
+def read_dict(filename, key_column_index):
+    dictionary = {}
     
-    text_list = []
+    with open(filename, "rt") as csv_file:
+        reader = csv.reader(csv_file)
+        next(reader)
 
-    with open(filename, "rt") as text_file:
-        for line in text_file:
-            clean_line = line.strip()
-            # clean_line.pop("AB")
-            text_list.append(clean_line)
+        for row_list in reader:
+            key = row_list[key_column_index]
+            dictionary[key] = row_list
 
 
+    return dictionary
 
-    return text_list
 
 
 
