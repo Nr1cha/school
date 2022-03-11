@@ -20,16 +20,7 @@ def main():
 
     print()
     print(f"Inkom Emporium")
-
-
-    # PRODUCTS FILE
-    for product_key in products_dict:
-      row_list = products_dict[product_key]
-      product_number = row_list[first_index]
-      product_name = row_list[second_index]
-      product_price = row_list[third_index]
-      update_dictionary = {product_number : (product_name, product_price)}
-      product_list.update(update_dictionary)
+    print()
 
     # REQUEST FILE 
     request_dict = read_dict("request.csv", first_index)
@@ -40,8 +31,8 @@ def main():
       list_split = product_list[product_num]
 
       total_items += int(product_quantity)
-      print(f"{list_split[first_index]}: {product_quantity} @ {list_split[second_index]}")
       subtotal += float(list_split[second_index]) * int(product_quantity)
+    print(f"{list_split[first_index]}: {product_quantity} @ {list_split[second_index]}")
 
 
 
@@ -49,8 +40,8 @@ def main():
     print()
     print(f"Number of Items: {total_items}")
     print(f"Subtotal: {subtotal:.1f}")
-    print(f"Sales Tax: {round(subtotal * 0.06, 2)}")
-    print(f"Total: {round(subtotal * 1.06, 2)}")
+    print(f"Sales Tax: {subtotal * 0.06:.2f}")
+    print(f"Total: {subtotal * 1.06:.2f}")
     print()
     print("Thank you for shopping at the Inkom Emporium.")
     print(f"{current_date_and_time:%a %b  %d %I:%M:%S %Y}")
