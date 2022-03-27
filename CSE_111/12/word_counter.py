@@ -1,15 +1,35 @@
 # https://pythonexamples.org/python-count-occurrences-of-word-in-text-file/
 
+user_text = input("please type in the name of the file. ")
+def main(user_file_name):
+
+    read_ext_file()
+    user_input()
 
 
 
-#get file object reference to the file
-file = open("/Users/nick/Documents/GitHub/school/CSE_111/11/words2.txt", "r")
 
-#read content of file to string
-data = file.read().lower()
 
-#get number of occurrences of the substring in the string
-occurrences = data.count("what")
+    def read_ext_file(filename):
 
-print('Number of occurrences of the word :', occurrences)
+    #get file object reference to the file
+        ext_file = open(filename, "r")
+
+    #read content of file to string
+        file_contents = ext_file.read().lower()
+
+        return file_contents
+
+
+    #get number of occurrences of the substring in the string
+    def user_input(user_word, file_contents):
+
+        word_occurrences = file_contents.count(user_word)
+
+        return word_occurrences
+
+    print('Number of occurrences of the word :', word_occurrences)
+
+if __name__ == "__main__":
+
+    main(user_text)
