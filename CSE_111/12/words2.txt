@@ -1,0 +1,40 @@
+{\rtf1\ansi\ansicpg1252\cocoartf2636
+\cocoatextscaling0\cocoaplatform0{\fonttbl\f0\fmodern\fcharset0 Courier;}
+{\colortbl;\red255\green255\blue255;\red0\green0\blue0;}
+{\*\expandedcolortbl;;\cssrgb\c0\c0\c0;}
+\margl1440\margr1440\vieww21800\viewh14560\viewkind1
+\deftab720
+\pard\pardeftab720\partightenfactor0
+
+\f0\fs26 \cf0 \expnd0\expndtw0\kerning0
+\outl0\strokewidth0 \strokec2 Proposal for a Student Chosen Program\
+\
+(This is a proposal. All proposals are written with our best knowledge\
+at the beginning of a project. As we progress from the beginning to the\
+end of a project, we gain more knowledge, and some of the ideas we\
+proposed change. This is part of completing any project and is fine.\
+However, we still must write a proposal so that our teachers or\
+supervisors know what we intend to do. Please answer each of the\
+following questions to the best of your knowledge.)\
+\
+1. What is the title of your program? Word_counter.py\
+\
+2. What real world problem will your program address or help to solve? It will count the chosen words in an external file and then output them to a new file\
+\
+3. What will you learn from developing this program?\
+Reading, parsing and writing to external files. \
+\
+4. What Python modules will your program use?\
+datetime, math, and pytest.\
+\
+5. Will you separate your Python program into functions that each\
+perform a single task? Yes, I\'92ll be trying to separate each operation into as many functions that I can. I\'92ll try and not only accept user input in it\'92s own function but I\'92ll also have a function that counts the words (all the words in the external file) as well. And then another function that outputs the selection to a file.  \
+\
+6. Will you write test functions to test many of your program functions? yes, I\'92ll create a test functions that are in my file as needed. \
+\
+(Remember that it's hard to test functions that get user input and print\
+output. It's easy to test functions that don't get user input and don't\
+print output but instead have parameters and return a result. Therefore,\
+you should write most of your program functions to have parameters and\
+return a result.)\
+}
