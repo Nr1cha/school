@@ -7,9 +7,6 @@ def main(user_file_name):
     user_input()
 
 
-
-
-
     def read_ext_file(filename):
 
     #get file object reference to the file
@@ -24,8 +21,10 @@ def main(user_file_name):
     #get number of occurrences of the substring in the string
     def user_input(user_word, file_contents):
 
-        word_occurrences = file_contents.count(user_word)
-
+        try:
+            word_occurrences = file_contents.count(user_word)
+        except PermissionError as Perm_error:
+            print(f"please type the in a word correctly{Perm_error}")
         return word_occurrences
 
     print('Number of occurrences of the word :', word_occurrences)
