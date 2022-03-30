@@ -12,5 +12,9 @@ https://www.geeksforgeeks.org/how-to-read-text-file-into-list-in-python/
 documentation for getting rid of symbols.
 https://www.geeksforgeeks.org/python-string-strip-2/
 
+stoping at the error when it's raised 
+https://stackoverflow.com/questions/438894/how-do-i-stop-a-program-when-an-exception-is-raised-in-python
+
+
 
 
