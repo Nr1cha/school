@@ -10,10 +10,13 @@ def main(user_file_name):
     def read_ext_file(filename):
 
     #get file object reference to the file
-        ext_file = open(filename, "r")
-
+        try:
+            ext_file = open(filename, "r")
     #read content of file to string
-        file_contents = ext_file.read().lower()
+            file_contents = ext_file.read().lower()
+            
+        except PermissionError as permission:
+            print(f"inncorrect filename. please type in a filename that exists. {permission}")
 
         return file_contents
 
@@ -21,13 +24,11 @@ def main(user_file_name):
     #get number of occurrences of the substring in the string
     def user_input(user_word, file_contents):
 
-        try:
-            word_occurrences = file_contents.count(user_word)
-        except PermissionError as Perm_error:
-            print(f"please type the in a word correctly{Perm_error}")
+        word_occurrences = file_contents.count(user_word)
+
         return word_occurrences
 
-    print('Number of occurrences of the word :', word_occurrences)
+    # print('Number of occurrences of the word :', word_occurrences)
 
 if __name__ == "__main__":
 
