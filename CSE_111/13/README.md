@@ -5,6 +5,8 @@ List of Functions in my program
 main()
 read_ext_file()
 user_input()
+clean_file()
+all_text_to_lower()
 ~~~
 
 
