@@ -2,7 +2,8 @@
 import sys
 
 user_text = input("please type in the name of the file. ")
-word_from_user = input("what word do you want to search? ").lower()
+word_from_user = input("what word do you want to search? ").lower().capitalize()
+
 def main(user_file_name):
 
     file_contents = read_ext_file(user_file_name)
@@ -10,13 +11,13 @@ def main(user_file_name):
     print(f" '{word_from_user}' has {word_output} occurances in your file.")
 
 
-def read_ext_file(filename):
+def read_ext_file(filename): #read the text of an external file. 
 
-#get file object reference to the file
+#assign file to a variable
     try:
         ext_file = open(filename, "r")
 #read content of file to string
-        file_contents = ext_file.read().lower()
+        file_contents = ext_file.read()
         return file_contents
         
     except FileNotFoundError as fileIssue:
