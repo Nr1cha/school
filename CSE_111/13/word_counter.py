@@ -4,14 +4,12 @@ import os
 os.system('clear')
 
 #GLOBAL VARIABLES
-userFile = input("please type in the name of the file: ") + ".txt"
-print(userFile)
-user_word = input("what word do you want to search? ").lower()
 gindex_list = []
 
+def main():#the main function that holds the stuff i want the file to do.
 
-def main(user_file_name):#the main function that holds the stuff i want the file to do.
-
+    user_file_name = input("please type in the name of the file: ") + ".txt"
+    user_word = input("what word do you want to search? ").lower()
     file_contents = read_ext_file(user_file_name)#this is a string
     file_contents2 = all_text_to_lower(file_contents)
     finished_file = clean_file(file_contents2)
@@ -54,4 +52,4 @@ def get_word_occurances(user_word, file_contents):#*get number of occurrences of
 
 if __name__ == "__main__":
 
-    main(userFile)
+    main()
