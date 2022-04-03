@@ -3,10 +3,10 @@
 List of Functions in my program
 ~~~python
 main()
-read_ext_file()
-user_input()
 clean_file()
 all_text_to_lower()
+read_ext_file()
+get_word_occurances()
 ~~~
 
 
