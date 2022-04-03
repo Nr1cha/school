@@ -1,4 +1,52 @@
 # https://pythonexamples.org/python-count-occurrences-of-word-in-text-file/
+'''
+total hours spent on project 14
+
+step 1 run word_counter.py with "words.txt" in the same directory
+step 2 type in words 
+step 3 type in the word that you want to search
+
+
+# Week 13
+###Program "word_counter.py"
+Build a program that takes user input of a word, searches a file, then tells the user how many instances of that word there are and at what positions in the file. <br>
+This is similar to when a user searches a word on a web-page but in an external file.
+####List of Functions in my program
+~~~python
+main()
+clean_file()
+all_text_to_lower()
+read_ext_file()
+get_word_occurances()
+~~~
+
+####List of Test Functions in my program
+~~~python
+test_read_ext_file()
+test_get_word_occurances()
+test_clean_file()
+test_all_text_to_lower()
+~~~
+
+
+####Documentation and sources I used when building this program
+For the following...
+    
+[converting external file to list and seperating words by spaces](https://www.geeksforgeeks.org/how-to-read-text-file-into-list-in-python/)
+
+[documentation for getting rid of symbols](https://www.geeksforgeeks.org/python-string-strip-2/)
+
+[stoping at the error when it's raised ](https://stackoverflow.com/questions/438894/how-do-i-stop-a-program-when-an-exception-is-raised-in-python)
+
+[list basics](https://www.youtube.com/watch?v=8a9wwsUT-o4)
+
+For referencing
+lower(),
+list(),
+count(),
+append(),
+I used [this link](https://www.programiz.com) and [this link](https://www.delftstack.com/howto/python/python-lowercase-list/)
+'''
 import sys
 import os 
 os.system('clear')#this just clears the screen when the file is started.
