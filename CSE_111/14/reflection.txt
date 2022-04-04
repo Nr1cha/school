@@ -1,0 +1,31 @@
+Please respond thoroughly (at least two sentences for each question) to
+the following three questions.
+
+1. Describe an experience you had this semester where you saw the power of
+functions.
+this semester, i noticed how valuable functions where when i realized that they can process
+any valid data that is passed into them. knowing that functions can do many things was great but,
+knowing that i can have functions for anything that i need is great to have. 
+
+
+
+2. In your judgment, what is the value of test functions?
+they ensure that when i've created the function, it works for sure before pushing any of 
+my code to production. they are a great way to help streamline the additional overhead between
+the developer and the tester. 
+
+
+
+3. Describe your process for troubleshooting and fixing a program that
+has a problem. What is one thing you can do to improve your process?
+when i look at an issue, i begin by folding all my code blocks down and grouping it all together. 
+additionally i will then review comments in the code to see what it's doing. 
+forthermore, i will check the scope and identify global vs local scope. 
+
+what i need to do to improve my process is finding any print and return statements and making sure
+they are in the correct scope. i also need to practice my data types more because different
+data types use different methods for similar tasks. i also need to be in the habit of updating documentation
+while i'm coding to ensure that i can get back on track faster. 
+
+
+
