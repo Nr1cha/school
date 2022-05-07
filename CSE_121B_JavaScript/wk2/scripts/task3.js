@@ -48,7 +48,6 @@ document.getElementById('multiplyNumbers').addEventListener('click',mulitplyNumb
 
 
 // Step 8: Using any of the three function declaration types, repeat Steps 1-5 with new functions named divide and divideNumbers and HTML form controls with IDs of dividend, divisor, quotient and divideNumbers
-
 const divide = (number1,number2) => number1 / number2;
 
 const divideNumbers = () => {
@@ -67,11 +66,11 @@ document.getElementById('divideNumbers').addEventListener('click',divideNumbers)
 
 // Step 1: Declare and instantiate a variable of type Date to hold the current date
 const date = new Date();
-const year = date.getFullYear();
 
 // Step 2: Declare a variable to hold the current year
-
 // Step 3: Using the variable declared in Step 1, call the built-in getFullYear() method/function and assign it to the variable declared in Step 2
+const year = date.getFullYear();
+
 
 // Step 4: Assign the current year variable to an HTML form element with an ID of year
 document.getElementById('year').innerText = year;
