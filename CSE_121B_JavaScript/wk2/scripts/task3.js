@@ -23,7 +23,7 @@ document.getElementById('addNumbers').addEventListener('click',addNumbers);
 // Step 6: Using function expressions, repeat Steps 1-5 with new functions named subtract and subtractNumbers and HTML form controls with IDs of minuend, subtrahend, difference and subtractNumbers
 
 // Step 7: Using arrow functions, repeat Steps 1-5 with new functions named multiply and mulitplyNumbers and HTML form controls with IDs of factor1, factor2, product and multiplyNumbers
-
+//arrow timestamp 32:30
 // Step 8: Using any of the three function declaration types, repeat Steps 1-5 with new functions named divide and divideNumbers and HTML form controls with IDs of dividend, divisor, quotient and divideNumbers
 
 // Step 9: Test all of the mathematical functionality of the task3.html page.
@@ -43,6 +43,11 @@ document.getElementById('addNumbers').addEventListener('click',addNumbers);
 // /* ARRAY METHODS */ timestamp = 25:20
 
 // Step 1: Declare and instantiate an array variable to hold the numbers 1 through 25
+let numbers = [];
+for (let i=1; i<=25; i++) {
+    numbers.push(i);
+}
+console.log(numbers);
 
 // Step 2: Assign the value of the array variable to the HTML element with an ID of "array"
 
@@ -53,5 +58,6 @@ document.getElementById('addNumbers').addEventListener('click',addNumbers);
 // Step 5: Use the reduce array method to sum the array variable elements and assign the result to the HTML element with an ID of "sumOfArray"
 
 // Step 6: Use the map array method to multiple each element in the array variable by 2 and assign the result to the HTML element with an ID of "multiplied"
+//map timestamp 37:25
 
 // Step 7: Use the map and reduce array methods to sum the array elements after multiplying each element by two.  Assign the result to the HTML element with an ID of "sumOfMultiplied"
