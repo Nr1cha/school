@@ -3,14 +3,22 @@
 /* FUNCTIONS */
 
 // Step 1: Using function declaration, define a function named add that takes two arguments, number1 and number2
-
 // Step 2: In the function, return the sum of the parameters number1 and number2
+function add(number1, number2) {
+    return number1 + number2;
+}
 
 // Step 3: Step 3: Using function declaration, define another function named addNumbers that gets the values of two HTML form controls with IDs of addend1 and addend2. Pass them to the add function
 
 // Step 4: Assign the return value to an HTML form element with an ID of sum
+function addNumbers() {
+    let num1 = parseInt(document.querySelector('#addend1').value);
+    let num2 = parseInt(document.getElementById('addend2').value);
+    document.getElementById("sum").value = add(num1,num2);
+}
 
 // Step 5: Add a "click" event listener to the HTML button with an ID of addNumbers that calls the addNumbers function
+document.getElementById('addNumbers').addEventListener('click',addNumbers);
 
 // Step 6: Using function expressions, repeat Steps 1-5 with new functions named subtract and subtractNumbers and HTML form controls with IDs of minuend, subtrahend, difference and subtractNumbers
 
@@ -32,7 +40,7 @@
 // Step 4: Assign the current year variable to an HTML form element with an ID of year
 
 
-/* ARRAY METHODS */
+// /* ARRAY METHODS */ timestamp = 25:20
 
 // Step 1: Declare and instantiate an array variable to hold the numbers 1 through 25
 
