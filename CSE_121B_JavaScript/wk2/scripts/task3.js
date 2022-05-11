@@ -98,7 +98,7 @@ const evenNumbers = numbers.filter(number => number % 2 == 0);
 document.getElementById('evens').innerHTML = evenNumbers;
 
 // Step 5: Use the reduce array method to sum the array variable elements and assign the result to the HTML element with an ID of "sumOfArray"
-const sumArray = numbers.reduce((sum,currentValue)=>{ 
+const sumArray = numbers.reduce((sum,currentValue) => { 
     return sum + currentValue
 },0);
 document.getElementById('sumOfArray').innerHTML = sumArray;
