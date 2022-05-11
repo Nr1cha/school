@@ -1,0 +1,48 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Title</title>
+    <script>
+        function greetUser() {
+            // This line prompts the user to type in his name.
+            let name = prompt("type what your nickname is.");
+
+            // Create a personalized greeting for the user.
+            let greeting = "Hey " + name + ".  may the weather be good for you today!";
+
+            // The next line causes the computer to display
+            // a greeting to the user in a popup window.
+            alert(greeting);
+        }
+
+        function applyScripture() {
+            // Get the user's name from the text field that has the id
+            // of "nameInputBox" and store it in a variable named name.
+            let name = document.getElementById('nameInputBox').value;
+
+            // Use string concatenation to create a verse
+            // of scripture personalized for the user.
+            let scripture = "Now remember " + name + "...If you come unto me I will show unto you your weakness. I give unto you weakness that you may be humble;"+
+             "and my grace is sufficient for all men that humble themselves before me; "+
+             "for if men humble themselves before me, and have faith in me, "+
+             "then will I make weak things become strong unto them.";
+
+            // Display the scripture in the div that has the id "outputDiv".
+            document.getElementById('outputDiv').innerHTML = scripture;
+        }
+
+    </script>
+</head>
+
+<body>
+    Please enter your name:<input type="text" id="nameInputBox">
+    <button type="button" onclick="applyScripture()">Verse</button>
+    <button type="button" onclick="greetUser()">Hi</button>
+    <div id="outputDiv"></div>
+</body>
+
+</html>
