@@ -11,6 +11,8 @@ nickRichards["name"] = "Nick";
 // Step 3: Add another property named photo with a value of the image path and name (used in Task 2) as a string
 
 nickRichards["photo"] = "images/nick.jpg";
+let picture = "images/nick.jpg";
+let picElement = document.getElementById("photo");
 
 // Step 4: Add another property named favoriteFoods with a value of an array of your favorite foods as strings ( hint: [] )
 
@@ -37,7 +39,17 @@ nickRichards.placesLived.push("washington", "utah");
 
 // Step 1: Assign the value of the name property (of the object declared above) to the HTML <span> element with an ID of name
 
-// Step 2: Assign the value of the photo property as the src attribute of the HTML <img> element with an ID of photo
+/* 
+Step 2: Assign the value of the photo property 
+as 
+the src attribute of the HTML <img> element with an ID of photo
+*/
+for (pic of picture) {
+    picElement += "<div>" + picture + "</div>";
+}
+document.querySelector('photo').setAttribute('src', picture);
+
+
 
 // Step 3: Assign the value of the name property as the alt attribute of the HTML <img> element with an ID of photo
 
