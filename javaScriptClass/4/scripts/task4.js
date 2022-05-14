@@ -10,7 +10,7 @@ nickRichards.name = "Nick Richards";
 
 // Step 3: Add another property named photo with a value of the image path and name (used in Task 2) as a string
 
-nickRichards.photo = "images/nick.jpg";
+nickRichards.photo = "images/Pika_Pi.jpg";
 
 // Step 4: Add another property named favoriteFoods with a value of an array of your favorite foods as strings ( hint: [] )
 
