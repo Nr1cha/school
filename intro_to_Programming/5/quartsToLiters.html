@@ -2,32 +2,32 @@
 <html lang="en-us">
 <head>
 <meta charset="utf-8">
-<title>Convert Celsius to Fahrenheit</title>
+<title>Convert Quarts to Liters</title>
 
 <script>
-/* Input: a temperature in Celsius
- * Processing: convert the temperature from Celsius to Fahrenheit
- * Output: the temperature converted to Fahrenheit
+/* Input: how many quarts you have
+ * Processing: convert the quarts to liters
+ * Output: the liters converted from quarts
  */
-function celsToFahr() {
-    // Read a Celsius temperature from the user.
-    let text = document.getElementById('celsiusInputBox').value;
+function quartToLiters() {
+    // Read quaarts value from the user.
+    let text = document.getElementById('quartsInputBox').value;
 
     // Convert what the user typed from text into a number.
-    let c = parseFloat(text);
+    let quartNum = parseFloat(text);
 
-    // Convert the Celsius temperature into Fahrenheit.
-    let f = c * 9 / 5 + 32;
+    // Convert the quarts to liters.
+    let liters = quartNum * 0.946352946;
 
     // Display the Fahrenheit temperature to the user.
-    document.getElementById('fahrenDiv').innerHTML = f;
+    document.getElementById('literDiv').innerHTML = liters;
 }
 </script>
 </head>
 
 <body>                               
-Enter a temperature in Celsius: <input type="text" id="celsiusInputBox">
-<button type="button" onclick="celsToFahr()">Convert</button>
-<div id="fahrenDiv"></div>                     
+Enter how many quarts to convert: <input type="text" id="quartsInputBox">
+<button type="button" onclick="quartToLiters()">Convert</button>
+<div id="literDiv"></div>                     
 </body>            
 </html>
