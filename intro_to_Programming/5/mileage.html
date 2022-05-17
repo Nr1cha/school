@@ -1,12 +1,44 @@
-<!DOCTYPE html>
-<html lang="en">
+<!DOCTYPE HTML>
+<html lang="en-us">
 <head>
-    <meta charset="UTF-8">
-    <meta http-equiv="X-UA-Compatible" content="IE=edge">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Document</title>
+<meta charset="utf-8">
+<title>Convert Quarts to Liters</title>
+
+<script>
+/* Input: how many quarts you have
+ * Processing: convert the quarts to liters
+ * Output: the liters converted from quarts
+ */
+function calcMPG() {
+    // Read trip A from the user.
+    let tripA = document.getElementById('tripAinputBox').value;
+    // Read trip B from the user.
+    let tripB = document.getElementById('tripBinputBox').value;
+    // Read gallons from the user.
+    let gallons = document.getElementById('gallonsinputBox').value;
+
+
+    // Convert what the user typed from text into a number.
+    let tripA_Num = parseFloat(tripA);
+    let tripB_Num = parseFloat(tripB);
+    let gallons_Num = parseFloat(gallons);
+
+    // get the mileage from the fields.
+    let MPG = (tripB_Num - tripA_Num) / gallons_Num;
+
+    // Display the Fahrenheit temperature to the user.
+    document.getElementById('finalMPG').innerHTML = MPG;
+}
+</script>
 </head>
-<body>
-    
-</body>
+
+<body>                               
+Enter Trip A miles: <input type="text" id="tripAinputBox"><br>
+Enter Trip B miles: <input type="text" id="tripBinputBox"><br>
+Enter Gallons: <input type="text" id="gallonsinputBox"><br>
+
+
+<button type="button" onclick="calcMPG()">Convert</button><br>
+<div id="finalMPG"></div>                     
+</body>            
 </html>
