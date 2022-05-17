@@ -10,13 +10,13 @@
  * Output: the liters converted from quarts
  */
 function quartToLiters() {
-    // Read quaarts value from the user.
+    // Read quarts value from the user.
     let text = document.getElementById('quartsInputBox').value;
 
     // Convert what the user typed from text into a number.
     let quartNum = parseFloat(text);
 
-    // Convert the quarts to liters.
+    // Convert the quarts to liters from the above variables.
     let liters = quartNum * 0.946352946;
 
     // Display the Fahrenheit temperature to the user.
@@ -25,9 +25,14 @@ function quartToLiters() {
 </script>
 </head>
 
-<body>                               
+<body>
+<!-- input fields -->
 Enter how many quarts to convert: <input type="text" id="quartsInputBox">
+
+<!-- page button -->
 <button type="button" onclick="quartToLiters()">Convert</button>
-<div id="literDiv"></div>                     
+
+<!-- where the output shows on the page -->
+<div id="literDiv"></div>                  
 </body>            
 </html>
