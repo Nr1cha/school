@@ -1,44 +1,50 @@
 <!DOCTYPE HTML>
 <html lang="en-us">
+
 <head>
-<meta charset="utf-8">
-<title>get the gas mileage</title>
+    <meta charset="utf-8">
+    <title>get the gas mileage</title>
 
-<script>
-/* Input: get trip A, B, and gallons
- * Processing: convert the user input to get gass mileage
- * Output: the gas mileage to the user
- */
-function calcMPG() {
-    // Read trip A from the user.
-    let tripA = document.getElementById('tripAinputBox').value;
-    // Read trip B from the user.
-    let tripB = document.getElementById('tripBinputBox').value;
-    // Read gallons from the user.
-    let gallons = document.getElementById('gallonsinputBox').value;
+    <script>
+        /* Input: get starting and ending odometers and gallons from the user
+         * Processing: convert the user input to get gas mileage
+         * Output: the gas mileage to the user
+         */
+        function calcMPG() {
+            // Read starting Odometer from the user.
+            let startingOdometer = document.getElementById('startingOdometerinputBox').value;
+            // Read ending Odometer from the user.
+            let endingOdometer = document.getElementById('endingOdometerinputBox').value;
+            // Read gallons from the user.
+            let gallonsUsed = document.getElementById('gallonsinputBox').value;
 
 
-    // Convert what the user typed from text into a number.
-    let tripA_Num = parseFloat(tripA);
-    let tripB_Num = parseFloat(tripB);
-    let gallons_Num = parseFloat(gallons);
+            // Convert what the user typed from text into a number.
+            //Note: these should all be converted from strings into numbers
+            let startingOdom_Num = parseFloat(startingOdometer);
+            let endingOdom_Num = parseFloat(endingOdometer);
+            let gallonsUsed_Num = parseFloat(gallonsUsed);
 
-    // get the mileage from the fields.
-    let MPG = (tripB_Num - tripA_Num) / gallons_Num;
+            // calculate the formula using the input variables above.
+            let MPG = (startingOdom_Num - endingOdom_Num) / gallonsUsed_Num;
 
-    // Display the Fahrenheit temperature to the user.
-    document.getElementById('finalMPG').innerHTML = MPG;
-}
-</script>
+            // Display the MPG to the user.
+            document.getElementById('finalMPG').innerHTML = MPG;
+        }
+    </script>
 </head>
 
-<body>                               
-Enter starting odometer miles: <input type="text" id="tripAinputBox"><br>
-Enter ending odometer miles: <input type="text" id="tripBinputBox"><br>
-Enter Gallons used: <input type="text" id="gallonsinputBox"><br>
+<body>
 
+    <!-- input fields -->
+    Enter starting odometer miles: <input type="text" id="startingOdometerinputBox"><br>
+    Enter ending odometer miles: <input type="text" id="endingOdometerinputBox"><br>
+    Enter Gallons used: <input type="text" id="gallonsinputBox"><br>
 
-<button type="button" onclick="calcMPG()">Convert</button><br>
-<div id="finalMPG"></div>                     
-</body>            
+    <!-- button that the user will click -->
+    <button type="button" onclick="calcMPG()">Convert</button><br>
+    <!-- this is where the final number will show -->
+    <div id="finalMPG"></div>
+</body>
+
 </html>
