@@ -2,12 +2,12 @@
 <html lang="en-us">
 <head>
 <meta charset="utf-8">
-<title>Convert Quarts to Liters</title>
+<title>get the gas mileage</title>
 
 <script>
-/* Input: how many quarts you have
- * Processing: convert the quarts to liters
- * Output: the liters converted from quarts
+/* Input: get trip A, B, and gallons
+ * Processing: convert the user input to get gass mileage
+ * Output: the gas mileage to the user
  */
 function calcMPG() {
     // Read trip A from the user.
@@ -33,9 +33,9 @@ function calcMPG() {
 </head>
 
 <body>                               
-Enter Trip A miles: <input type="text" id="tripAinputBox"><br>
-Enter Trip B miles: <input type="text" id="tripBinputBox"><br>
-Enter Gallons: <input type="text" id="gallonsinputBox"><br>
+Enter starting odometer miles: <input type="text" id="tripAinputBox"><br>
+Enter ending odometer miles: <input type="text" id="tripBinputBox"><br>
+Enter Gallons used: <input type="text" id="gallonsinputBox"><br>
 
 
 <button type="button" onclick="calcMPG()">Convert</button><br>
