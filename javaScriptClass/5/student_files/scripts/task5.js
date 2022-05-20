@@ -66,8 +66,29 @@ document.getElementById("message2").innerHTML = anotherMessage1;
 
 /* FETCH */
 // Step 1: Declare a global empty array variable to store a list of temples
+let templeList = [];
 
 // Step 2: Declare a function named output that accepts a list of temples as an array argument and does the following for each temple:
+function output(listOfTemples) {
+    for (temple of listOfTemples) {
+
+        let templeId = document.getElementById("temples");
+        let articleElement = document.createElement("article");
+        let h3Tag = document.createElement("h3")
+        h3Tag.innerText = temple.templeName;
+        let h4Tag = document.createElement("h4");
+        h4Tag.innerText = temple.location
+        let h4_2Tag = document.createElement("h4");
+        h4_2Tag.innerText = temple.dedicated
+        let imgTag = document.createElement("img");
+        imgTag.alt = temple.imageUrl
+        imgTag.src = temple.imageUrl
+
+        articleElement.append(h3Tag, h4Tag, h4_2Tag, imgTag);
+        templeId.append(articleElement);
+
+    }
+}
 // - Creates an HTML <article> element
 // - Creates an HTML <h3> element and add the temple's templeName property to it
 // - Creates an HTML <h4> element and add the temple's location property to it
@@ -75,6 +96,9 @@ document.getElementById("message2").innerHTML = anotherMessage1;
 // - Creates an HTML <img> element and add the temple's imageUrl property to the src attribute and the temple's templeName property to the alt attribute
 // - Appends the <h3> element, the two <h4> elements, and the <img> element to the <article> element as children
 // - Appends the <article> element to the HTML element with an ID of temples
+
+templeList.push({ templeName: "testTemple", location: "testLocation", dedicated: "testDedication", imageUrl: "www.google.com" })
+output(templeList);
 
 // Step 3: Create another function called getTemples. Make it an async function.
 // Step 4: In the function, using the built-in fetch method, call this absolute URL: 'https://byui-cse.github.io/cse121b-course/week05/temples.json'. Create a variable to hold the response from your fetch. You should have the program wait on this line until it finishes.
