@@ -1,0 +1,36 @@
+<!DOCTYPE HTML>
+<html lang="en-us">
+
+<head>
+    <meta charset="utf-8">
+    <title>Rate of Change</title>
+    <script>
+
+
+        function computeRateOfChange() {
+            // Get value from  user
+            let currPrice = document.getElementById('currPrice').value;
+            let prevPrice = document.getElementById('prevPrice').value;
+
+            // Convert to int
+            let currPriceNum = parseFloat(currPrice);
+            let prevPriceNum = parseFloat(prevPrice);
+
+            // Math
+            let rateOfChange = (currPrice - prevPrice) / prevPrice;
+            // output to id
+            document.getElementById('rate').innerHTML = rateOfChange.toFixed(4);
+        }
+
+    </script>
+</head>
+
+<body>
+    <h1>Rate of Change</h1>
+    <label>Previous Price <input type="text" id="prevPrice"></label><br>
+    <label>Current Price <input type="text" id="currPrice"></label><br>
+    <button type="button" onclick="computeRateOfChange()">Rate of Change</button><br>
+    Rate of Change <div id="rate"></div>
+</body>
+
+</html>
