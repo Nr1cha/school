@@ -2,7 +2,11 @@
 <html lang="en-us">
 
 <head>
-    <meta charset="utf-8">
+    <meta charset="UTF-8">
+    <meta name="description" content="car mileage calculator">
+    <meta name="keywords" content="HTML, CSS, JavaScript">
+    <meta name="author" content="Nick Richards">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>get the gas mileage</title>
 
     <script>
@@ -37,9 +41,9 @@
 <body>
 
     <!-- input fields -->
-    Enter starting odometer miles: <input type="text" id="startingOdometerinputBox"><br>
-    Enter ending odometer miles: <input type="text" id="endingOdometerinputBox"><br>
-    Enter Gallons used: <input type="text" id="gallonsinputBox"><br>
+    <label>Enter starting odometer miles: <input type="text" id="startingOdometerinputBox" name="starting odometer"></label><br>
+    <label>Enter ending odometer miles: <input type="text" id="endingOdometerinputBox" name="ending odometer"></label><br>
+    <label>Enter Gallons used: <input type="text" id="gallonsinputBox" name="gallons"></label><br>
 
     <!-- button that the user will click -->
     <button type="button" onclick="calcMPG()">Convert</button><br>
