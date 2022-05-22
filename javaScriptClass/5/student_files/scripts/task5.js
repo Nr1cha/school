@@ -69,7 +69,7 @@ document.getElementById("message2").innerHTML = anotherMessage1;
 let templeList = [];
 
 // Step 2: Declare a function named output that accepts a list of temples as an array argument and does the following for each temple:
-function output1(listOfTemples) {
+function output(listOfTemples) {
     for (temple of listOfTemples) {
 
         let templeId = document.getElementById("temples");
@@ -97,34 +97,67 @@ function output1(listOfTemples) {
 // - Appends the <h3> element, the two <h4> elements, and the <img> element to the <article> element as children
 // - Appends the <article> element to the HTML element with an ID of temples
 
-templeList.push({ templeName: "testTemple", location: "testLocation", dedicated: "testDedication", imageUrl: "https://ksltv.com/wp-content/uploads/2022/03/SMITHFIELD-EPHRAIM-RENDERS.jpg" })
-output1(templeList);
+// templeList.push({ templeName: "testTemple", location: "testLocation", dedicated: "testDedication", imageUrl: "https://ksltv.com/wp-content/uploads/2022/03/SMITHFIELD-EPHRAIM-RENDERS.jpg" })
+// output(templeList);
 
 // Step 3: Create another function called getTemples. Make it an async function.
-function getTemples(){
-
-}
 // Step 4: In the function, using the built-in fetch method, call this absolute URL: 'https://byui-cse.github.io/cse121b-course/week05/temples.json'. Create a variable to hold the response from your fetch. You should have the program wait on this line until it finishes.
 // Step 5: Convert your fetch response into a Javascript object ( hint: .json() ). Store this in the templeList variable you declared earlier (Step 1). Make sure the the execution of the code waits here as well until it finishes.
 // Step 6: Finally, call the output function and pass it the list of temples. Execute your getTemples function to make sure it works correctly.
 
-async function getTempleData() {
+async function getTemples() {
     let remoteData = await fetch("https://byui-cse.github.io/cse121b-course/week05/temples.json");
-    remoteData = await remoteData.json();
-    // output(remoteData);
-    console.log(remoteData)
+    templeList = await remoteData.json();
+    output(templeList);
+    // console.log(remoteData)
 }
-getTempleData();
+getTemples();
 
 
 // Step 7: Declare a function named reset that clears all of the <article> elements from the HTML element with an ID of temples
+function reset() {
+    let templeElement = document.getElementById("temples");
+    templeElement.innerHTML = "";
+}
 
 // Step 8: Declare a function named sortBy that does the following:
 // - Calls the reset function
 // - Sorts the global temple list by the currently selected value of the HTML element with an ID of sortBy
 // - Calls the output function passing in the sorted list of temples
+function sortBy(){
+    reset();
+    let sort = document.getElementById("sortBy").value;
+    if (sort ==  "templeNameAscending") {
+        templeList.sort(sortAscending);
+    }
+    if (sort == "templeNameDescending"){
+        templeList.sort(sortDescending);
+        console.log(templeList)
+    }
+    output(templeList);
+}
+function sortDescending (a,b){
+    if (a.templeName < b.templeName){
+        return 1;
+    }
+    if (a.templeName > b.templeName){
+        return -1;
+    }
+    return 0;
+}
+function sortAscending (a,b){
+    if (a.templeName < b.templeName){
+        return -1;
+    }
+    if (a.templeName > b.templeName){
+        return 1;
+    }
+    return 0;
+}
+sortBy();
 
 // Step 9: Add a change event listener to the HTML element with an ID of sortBy that calls the sortBy function
+document.getElementById("sortBy").addEventListener("change",sortBy);
 
 /* STRETCH */
 
