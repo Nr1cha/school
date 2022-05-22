@@ -1,0 +1,41 @@
+<!DOCTYPE HTML>
+<html lang="en-us">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="description" content="compute volume conversion">
+    <meta name="keywords" content="HTML, CSS, JavaScript">
+    <meta name="author" content="Nick Richards">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Volume of a Torus</title>
+    <script>
+
+
+        function computeVolume() {
+            // Get value from  user
+            let inner_a = document.getElementById('inner').value;
+            let outer_b = document.getElementById('outer').value;
+
+            // Convert to int
+            let inner_aNum = parseFloat(inner_a);
+            let outer_bNum = parseFloat(outer_b);
+
+            // Math
+            let pie = Math.PI;
+            let volume = pie ** 2 * (inner_aNum + outer_bNum) * ((inner_aNum - outer_bNum) ** 2) / 4;
+            // output to id
+            document.getElementById('volume').innerHTML = volume.toFixed(2);
+        }
+
+    </script>
+</head>
+
+<body>
+    <h1>Volume of a Torus</h1>
+    <label>Inner radius <input type="text" id="inner"></label><br>
+    <label>Outer radius <input type="text" id="outer"></label><br>
+    <button type="button" onclick="computeVolume()">Volume</button><br>
+    Volume <div id="volume"></div>
+</body>
+
+</html>
