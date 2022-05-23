@@ -1,0 +1,84 @@
+<!-- 
+Input:
+a number from the user
+an opperand
+
+Processing:
+comparing the values of the number inputs from the user 
+
+Output:
+telling the user if they are correct or not
+  
+-->
+
+
+
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+        input {
+            max-width: 60px;
+            padding: 5px;
+            margin: 5px;
+        }
+
+        button {
+            margin: 5px;
+        }
+    </style>
+    <script>
+        function arithmetic() {
+            let box1 = parseInt(document.getElementById("box1").value);
+            let box2 = document.getElementById("opperand").value;
+            let box3 = parseInt(document.getElementById("box3").value);
+            let box4 = parseInt(document.getElementById("box4").value);
+            let opperand;
+            let correct;
+            switch (box2) {
+                case "+":
+                    opperand = "+";
+                    correct = box1 + box3 == box4;
+                    break;
+                case "-":
+                    opperand = "-";
+                    correct = box1 - box3 == box4;
+                    break;
+                case "*":
+                    opperand = "*";
+                    correct = box1 * box3 == box4;
+                    break;
+                case "/":
+                    opperand = "/";
+                    correct = box1 / box3 == box4;
+                    break;
+            }
+            if (correct == true) {
+                document.getElementById("output").innerText = "Correct! Good job!";
+            } else {
+                document.getElementById("output").innerText = "Incorrect! Try again!";
+
+            }
+        }
+    </script>
+</head>
+
+<body>
+    <h1 id="header">Test Your Math Skills</h1>
+    <label> <input type="number" id="box1"></label>
+    <label> <input type="text" id="opperand"></label>
+    <label> <input type="number" id="box3"></label> =
+    <label> <input type="number" id="box4"></label>
+    <div id="output"></div><br>
+    <button type="button" id="but1" onclick="arithmetic()">Check</button>
+
+
+
+</body>
+
+</html>

@@ -1,0 +1,33 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<script>
+    function isEven(){
+        let text = document.getElementById("inputBox").value;
+        let number = parseInt(text);
+
+        let message;
+        if ((number % 2) == 0){
+            message = number + " is an even number";
+        }
+        else{
+            message = number + " is not an even number, please enter one that is even";
+        }
+        document.getElementById("output").innerHTML = message;
+    }
+</script>
+<body>
+<label> Please inter an integer: <input type="text" id="inputBox"></label>
+<button type="button" onclick="isEven()">Is Even?</button>
+<div id="output"></div>
+
+
+
+    
+</body>
+</html>

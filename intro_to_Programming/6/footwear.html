@@ -1,0 +1,51 @@
+<!-- 
+    Input:
+    user inputs type of weather
+    Processing:
+    computer takes type of weather and matches it to the accociated footwear
+    Output:
+    computer then outputs the type of footwear is appropriate for the weather 
+-->
+
+
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <script>
+        function footWearFunction() {
+            let userText = document.getElementById("weatherQuestion").value;
+            let lowerText = userText.toLowerCase();
+            let weather;
+            switch (lowerText) {
+                case "hot":
+                    weather = "sandals"
+                    break;
+                case "rain":
+                    weather = "galoshes";
+                    break;
+                case "snow":
+                    weather = "boots";
+                    break;
+                default:
+                    weather = "shoes";
+            }
+            document.getElementById("output").innerHTML = weather;
+        }
+    
+    </script>
+</head>
+
+<body>
+    <label> enter the current weather <br> hot, rain or snow <br>
+        <input type="text" id="weatherQuestion"></label>
+    <button type="button" id="but1" onclick="footWearFunction()">submit</button>
+    <div id="output"></div>
+
+</body>
+
+</html>
