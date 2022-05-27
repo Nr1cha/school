@@ -11,7 +11,7 @@ let currentDay = dateNow.getDay();
 // let weekDay = currentDate.getDay("1-5");
 
 // Step 3: Using the variable declared in Step 1, assign the value of the variable declared in Step 2 to the day of the week ( hint: getDay() )
-console.log(currentDay);
+// console.log(currentDay);
 
 // Step 4: Declare a variable to hold a message that will be displayed
 let message = "hang in there"
@@ -69,8 +69,8 @@ document.getElementById("message2").innerHTML = anotherMessage1;
 let templeList = [];
 
 // Step 2: Declare a function named output that accepts a list of temples as an array argument and does the following for each temple:
-function output(listOfTemples) {
-    for (temple of listOfTemples) {
+function output(listOfNames) {
+    for (temple of listOfNames) {
 
         let templeId = document.getElementById("temples");
         let articleElement = document.createElement("article");
@@ -106,9 +106,9 @@ function output(listOfTemples) {
 // Step 6: Finally, call the output function and pass it the list of temples. Execute your getTemples function to make sure it works correctly.
 
 async function getTemples() {
-    let remoteData = await fetch("https://byui-cse.github.io/cse121b-course/week05/temples.json");
-    templeList = await remoteData.json();
-    output(templeList);
+    let remoteData = await fetch("https://swapi.dev/api/");
+    swapiList = await remoteData.json();
+    output(swapiList);
     // console.log(remoteData)
 }
 getTemples();
@@ -116,8 +116,8 @@ getTemples();
 
 // Step 7: Declare a function named reset that clears all of the <article> elements from the HTML element with an ID of temples
 function reset() {
-    let templeElement = document.getElementById("temples");
-    templeElement.innerHTML = "";
+    let results = document.getElementById("people");
+    results.innerHTML = "";
 }
 
 // Step 8: Declare a function named sortBy that does the following:
@@ -128,13 +128,13 @@ function sortBy(){
     reset();
     let sort = document.getElementById("sortBy").value;
     if (sort ==  "templeNameAscending") {
-        templeList.sort(sortAscending);
+        swapiList.sort(sortAscending);
     }
     if (sort == "templeNameDescending"){
-        templeList.sort(sortDescending);
-        console.log(templeList)
+        swapiList.sort(sortDescending);
+        console.log(swapiList)
     }
-    output(templeList);
+    output(swapiList);
 }
 function sortDescending (a,b){
     if (a.templeName < b.templeName){
