@@ -66,25 +66,25 @@ document.getElementById("message2").innerHTML = anotherMessage1;
 
 /* FETCH */
 // Step 1: Declare a global empty array variable to store a list of temples
-let templeList = [];
+let filmList = [];
 
 // Step 2: Declare a function named output that accepts a list of temples as an array argument and does the following for each temple:
 function output(listOfNames) {
-    for (temple of listOfNames) {
-
+    for (film of listOfNames) {
+        let newLineTag = document.createElement("br");
         let templeId = document.getElementById("temples");
         let articleElement = document.createElement("article");
         let h3Tag = document.createElement("h3")
-        h3Tag.innerText = temple.templeName;
+        h3Tag.innerText = film.title;
         let h4Tag = document.createElement("h4");
-        h4Tag.innerText = temple.location
+        h4Tag.innerText = "Producer: " + film.producer
         let h4_2Tag = document.createElement("h4");
-        h4_2Tag.innerText = temple.dedicated
-        let imgTag = document.createElement("img");
-        imgTag.alt = temple.imageUrl
-        imgTag.src = temple.imageUrl
+        h4_2Tag.innerText = film.director
+        // let imgTag = document.createElement("img");
+        // imgTag.alt = temple.imageUrl
+        // imgTag.src = temple.imageUrl
 
-        articleElement.append(h3Tag, h4Tag, h4_2Tag, imgTag);
+        articleElement.append(h3Tag, h4Tag, h4_2Tag);
         templeId.append(articleElement);
 
     }
@@ -106,9 +106,9 @@ function output(listOfNames) {
 // Step 6: Finally, call the output function and pass it the list of temples. Execute your getTemples function to make sure it works correctly.
 
 async function getTemples() {
-    let remoteData = await fetch("https://swapi.dev/api/");
+    let remoteData = await fetch("https://swapi.dev/api/films");
     swapiList = await remoteData.json();
-    output(swapiList);
+    output(swapiList.results);
     // console.log(remoteData)
 }
 getTemples();
@@ -116,7 +116,7 @@ getTemples();
 
 // Step 7: Declare a function named reset that clears all of the <article> elements from the HTML element with an ID of temples
 function reset() {
-    let results = document.getElementById("people");
+    let results = document.getElementById("temples");
     results.innerHTML = "";
 }
 
@@ -128,13 +128,13 @@ function sortBy(){
     reset();
     let sort = document.getElementById("sortBy").value;
     if (sort ==  "templeNameAscending") {
-        swapiList.sort(sortAscending);
+        filmList.sort(sortAscending);
     }
     if (sort == "templeNameDescending"){
-        swapiList.sort(sortDescending);
-        console.log(swapiList)
+        filmList.sort(sortDescending);
+        console.log(filmList)
     }
-    output(swapiList);
+    output(filmList);
 }
 function sortDescending (a,b){
     if (a.templeName < b.templeName){
