@@ -1,0 +1,123 @@
+<!DOCTYPE html>
+
+<html lang="en-us">
+
+
+
+<head>
+
+    <meta charset="utf-8">
+
+    <meta name="author" content="Joe Green">
+
+    <title>Test Your Math Skills!</title>
+
+    <script>
+
+        function mathQuiz() {
+
+            let x = parseFloat(document.getElementById("int1").value);
+
+            let y = parseFloat(document.getElementById("int2").value);
+
+            let op = document.getElementById("op").value;
+
+            let guess = parseFloat(document.getElementById("guess").value);
+
+            let InvalidOperator = "Please use ''+'' for addition, ''-'' for subtraction, ''*'' for multiplication, or ''/'' for division."
+
+
+
+            if (op == "+") {
+
+                ans = x + y;
+
+            }
+
+            else if (op == "-") {
+
+                ans = x - y;
+
+            }
+
+            else if (op == "*") {
+
+                ans = x * y;
+
+            }
+
+            else if (op == "/") {
+
+                ans = x / y;
+
+            }
+
+            else {
+
+                alert(InvalidOperator)
+
+            }
+
+
+
+            let correct = ans
+
+            if (guess == correct) {
+
+                output = "Correct";
+
+            }
+
+            else if (guess != correct) {
+
+                output = "Incorrect";
+
+            }
+
+            document.getElementById("outputDiv").innerHTML = output;
+
+        }
+
+    </script>
+
+</head>
+
+
+
+<body>
+
+    <h1>Test Your Math Skills!</h1>
+
+    <p>
+
+        <input type="text" id="int1">
+
+        <input type="text" id="op" size="1">
+
+        <input type="text" id="int2">
+
+        = <input type="text" id="guess">
+
+        <button type="button" onclick="mathQuiz()">Submit</button>
+
+    </p>
+
+    <p>
+
+        &emsp;&emsp;&emsp;&nbsp; (number)
+
+        &emsp;&emsp;&emsp;&nbsp;(operator)
+
+        &emsp;&emsp;&emsp;(number)
+
+        &emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;(sum)
+
+    </p>
+
+    <div id="outputDiv"></div>
+
+</body>
+
+
+
+</html>
