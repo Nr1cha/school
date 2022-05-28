@@ -7,14 +7,13 @@ article {
 body {
     font-family: 'Kalam', cursive;
 }
+
 h3 {
     font-style: normal;
-    color: blue;
 }
+
 h4 {
-    /* font-style: normal; */
     font-weight: normal;
-    color: green;
 }
 
 div {
@@ -32,16 +31,6 @@ footer {
 header {
     margin: auto;
     text-align: center;
-}
-
-img {
-    width: 80%;
-}
-
-label {
-    display: inline-block;
-    min-width: 120px;
-    text-align: right;
 }
 
 main {
@@ -78,16 +67,11 @@ nav ul li a {
     padding: 10px;
     text-decoration: none;
 }
+
 nav ul li a:hover {
     background-color: #efefef;
     color: black;
 }
-
-/* section {
-    display: flex;
-    flex-direction: column;
-    align-items: center;
-} */
 
 
 /* Class Selectors */
@@ -96,19 +80,7 @@ nav ul li a:hover {
     color: black;
 }
 
-.open li {
-    display: block;
-}
-
 /* ID Selectors */
-#favorite-foods, #hobbies, #places-lived {
-    margin: 0;
-    padding: 0;
-    list-style: none;
-    display: inline-block;
-    text-align: left;
-    vertical-align: top;
-}
 
 #movies {
     display: grid;
@@ -120,7 +92,7 @@ nav ul li a:hover {
     nav ul {
         flex-direction: row;
     }
-    
+
     nav ul li:first-child {
         display: none;
     }
