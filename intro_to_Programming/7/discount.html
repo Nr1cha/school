@@ -1,0 +1,51 @@
+<!-- 
+Input:
+read customer subtotal input 
+click compute
+
+Processing:
+if (subtotal > 50 && today == 2 && today == 3 ){
+    subtotal - .10 
+    subtotal + .6
+    document.getelementbyid('output').innerText = subtotal;
+}
+
+Output:
+output the new price to the customer
+
+-->
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Document</title>
+    <script>
+        let now = new Date();
+        let month = now.getMonth();
+        let dayOfMonth = now.getDate();
+        let dayOfWeek = now.getDay();
+
+        function calculeteSubtotal() {
+            let userInput = parseFloat(document.getElementById("subtotalBox").value);
+            let discount;
+            let total;
+            if (userInput > 50 && dayOfWeek == 2 || dayOfWeek == 3) {
+                discount = userInput - .10;
+                total = discount + .6;
+            }
+            document.getElementById("output").innerText = total;
+        }
+    </script>
+</head>
+
+<body>
+    <label> Please enter the subtotal: <br>
+        <input type="text" id="subtotalBox"></label>
+    <button type="button" id="but_submit" onclick="calculeteSubtotal()">submit</button>
+    <div id="output"></div>
+</body>
+
+</html>

@@ -1,49 +1,66 @@
 <!-- 
 Input:
-get day information from the computers clock
-read weekday
-read weekend days
-
-
+  get day information from the computers clock
+  read weekday
+  read weekend days
+  
+  
 Processing:
+  if the day is the weekend or a holiday 
+  sleep in 
 
+  if the day is a weekday or not a weekend
+  wake up
 
 Output:
-
-  
+  display  sleep in on the weekend and holidays 
+  display wake up on weekdays and not holidays
 -->
 
 <!DOCTYPE html>
 <html lang="en">
-  <head>
-    <meta charset="UTF-8" />
-    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
-    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <title>Document</title>
-    <script>
-      let now = new Date();
-      let month = now.getMonth();
-      let dayOfMonth = now.getDate();
-      let dayOfWeek = now.getDay();
 
-      let jan1st = 0;
-      if ([1,2,3,4,5,6].includes(dayOfWeek)){
-          console.log("Get up!")
-      }
-        else if([0,7].includes(dayOfWeek)){
-          console.log("Sleep in")
-      }
+<head>
+  <meta charset="UTF-8" />
+  <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Document</title>
+  <script>
+    let now = new Date();
+    let newYears = new Date('01-01-2022');
+    let christmas = new Date('12-25-2022');
+    let fourth = new Date('07-04-2022');
+    let fourthDayafter = new Date('07-05-2022');
+
+    now = christmas;
+
+    let month = now.getMonth();
+    let dayOfMonth = now.getDate();
+    let dayOfWeek = now.getDay();
+    if (
+      [0, 7].includes(dayOfWeek) ||
+      month === 0 && dayOfMonth === 1 ||
+      month === 6 && dayOfMonth === 4 ||
+      month === 11 && dayOfMonth === 25
+    ) {
+      console.log("Sleep in")
+    }
+    else if ([1, 2, 3, 4, 5, 6].includes(dayOfWeek)) {
+      console.log("Get up! ")
+    }
 
 
 
 
-      console.log("now: ",now);
-      console.log("month: ",month);
-      console.log("day of the month: ",dayOfMonth);
-      console.log("day of the week: ",dayOfWeek);
+    console.log("now: ", now);
+    console.log("month: ", month);
+    console.log("day of the month: ", dayOfMonth);
+    console.log("day of the week: ", dayOfWeek);
 
 
-    </script>
-  </head>
-  <body></body>
+  </script>
+</head>
+
+<body></body>
+
 </html>
