@@ -25,11 +25,21 @@ Output:
       let month = now.getMonth();
       let dayOfMonth = now.getDate();
       let dayOfWeek = now.getDay();
+      if ([1,2,3,4,5,6].includes(dayOfWeek)){
+          console.log("Get up!")
+      }
+        else if([0,7].includes(dayOfWeek)){
+          console.log("Sleep in")
+      }
+
+
+
 
       console.log("now: ",now);
       console.log("month: ",month);
       console.log("day of the month: ",dayOfMonth);
       console.log("day of the week: ",dayOfWeek);
+
 
     </script>
   </head>
