@@ -1,5 +1,8 @@
 <!-- 
 Input:
+get day information from the computers clock
+read weekday
+read weekend days
 
 
 Processing:
@@ -12,14 +15,23 @@ Output:
 
 <!DOCTYPE html>
 <html lang="en">
-<head>
-    <meta charset="UTF-8">
-    <meta http-equiv="X-UA-Compatible" content="IE=edge">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <title>Document</title>
-    <script></script>
-</head>
-<body>
-    
-</body>
+    <script>
+      let now = new Date();
+      let month = now.getMonth();
+      let dayOfMonth = now.getDate();
+      let dayOfWeek = now.getDay();
+
+      console.log("now: ",now);
+      console.log("month: ",month);
+      console.log("day of the month: ",dayOfMonth);
+      console.log("day of the week: ",dayOfWeek);
+
+    </script>
+  </head>
+  <body></body>
 </html>
