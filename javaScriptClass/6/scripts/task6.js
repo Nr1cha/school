@@ -71,20 +71,27 @@ let filmList = [];
 // Step 2: Declare a function named output that accepts a list of temples as an array argument and does the following for each temple:
 function output(listOfNames) {
     for (film of listOfNames) {
-        let newLineTag = document.createElement("br");
         let templeId = document.getElementById("temples");
         let articleElement = document.createElement("article");
         let h3Tag = document.createElement("h3")
         h3Tag.innerText = film.title;
-        let h4Tag = document.createElement("h4");
-        h4Tag.innerText = "Producer: " + film.producer
+
+        let h4prodString = document.createElement("h4");
+        h4prodString.innerText = "Producer: "
+
+        let h4filmProducer = document.createElement("h4");
+        h4filmProducer.innerText = film.producer
+
+
         let h4_2Tag = document.createElement("h4");
         h4_2Tag.innerText = film.director
+
+
         // let imgTag = document.createElement("img");
         // imgTag.alt = temple.imageUrl
         // imgTag.src = temple.imageUrl
 
-        articleElement.append(h3Tag, h4Tag, h4_2Tag);
+        articleElement.append(h3Tag, h4prodString, h4filmProducer);
         templeId.append(articleElement);
 
     }
