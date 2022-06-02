@@ -27,6 +27,7 @@ Output:
   <title>Document</title>
   <script>
     let now = new Date();
+    
     let newYears = new Date('01-01-2022');
     let christmas = new Date('12-25-2022');
     let fourth = new Date('07-04-2022');
@@ -38,14 +39,14 @@ Output:
     let dayOfMonth = now.getDate();
     let dayOfWeek = now.getDay();
     if (
-      [0, 7].includes(dayOfWeek) ||
+      [0, 6].includes(dayOfWeek) ||
       month === 0 && dayOfMonth === 1 ||
       month === 6 && dayOfMonth === 4 ||
       month === 11 && dayOfMonth === 25
     ) {
       console.log("Sleep in")
     }
-    else if ([1, 2, 3, 4, 5, 6].includes(dayOfWeek)) {
+    else if ([1, 2, 3, 4, 5].includes(dayOfWeek)) {
       console.log("Get up! ")
     }
 
