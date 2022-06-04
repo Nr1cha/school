@@ -31,34 +31,31 @@ Output:
     let newYears = new Date('01-01-2022');
     let christmas = new Date('12-25-2022');
     let fourth = new Date('07-04-2022');
-    let fourthDayafter = new Date('07-05-2022');
+    // let fourthDayafter = new Date('07-05-2022');
 
-    now = christmas;
+    // now = christmas;
 
     let month = now.getMonth();
     let dayOfMonth = now.getDate();
     let dayOfWeek = now.getDay();
+    let notice;
     if (
       [0, 6].includes(dayOfWeek) ||
       month === 0 && dayOfMonth === 1 ||
       month === 6 && dayOfMonth === 4 ||
       month === 11 && dayOfMonth === 25
     ) {
-      console.log("Sleep in")
+      notice = "Sleep in";
     }
     else if ([1, 2, 3, 4, 5].includes(dayOfWeek)) {
-      console.log("Get up! ")
+      notice ="Get up! ";
     }
-
-
-
+    alert(notice);
 
     console.log("now: ", now);
     console.log("month: ", month);
     console.log("day of the month: ", dayOfMonth);
     console.log("day of the week: ", dayOfWeek);
-
-
   </script>
 </head>
 

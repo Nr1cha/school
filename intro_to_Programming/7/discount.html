@@ -23,20 +23,24 @@ output the new price to the customer
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <title>Document</title>
     <script>
-        let now = new Date();
-        let month = now.getMonth();
-        let dayOfMonth = now.getDate();
-        let dayOfWeek = now.getDay();
-
+        // let now = new Date();
+        // let dayOfMonth = now.getDate();
+        
         function calculeteSubtotal() {
-            let userInput = parseFloat(document.getElementById("subtotalBox").value);
             let discount;
-            let total;
+            let subTotal;
+            let userInput = parseFloat(document.getElementById("subtotalBox").value);
+            
+            
+            let dayOfWeek = new Date().getDay();
             if (userInput > 50 && dayOfWeek == 2 || dayOfWeek == 3) {
-                discount = userInput - .10;
-                total = discount + .6;
+                discount = 0.9;
+            } else {
+                discount = 1 ;
             }
-            document.getElementById("output").innerText = total;
+
+            subTotal = (userInput * discount * 1.06).toFixed(2);
+            document.getElementById("output").innerText = subTotal;
         }
     </script>
 </head>
