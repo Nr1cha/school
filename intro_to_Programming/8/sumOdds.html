@@ -1,18 +1,40 @@
 <!DOCTYPE html>
 <html lang="en">
+<!-- 
+        input: 
+        ask the user for a number
+        Processing:
+        create a for loop that starts at 1 to user variable
+
+        output:
+        output the sum of all odd numbers from 1 to userNumber
+
+-->
 
 <head>
     <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Document</title>
-    <script></script>
+    <script>
+        function addOdds() {
+            let userNum = parseFloat(document.getElementById("numberQuestion").value);
+            let sumOdds = 0 //place to store my odd nums
+            for (let i = 1; i <= userNum; i++) {
+                if (i % 2 != 0) { // if the i doesn't have a remainder
+                    // sumOdds += i; this is shorthand for line 26
+                    sumOdds = sumOdds + i;
+                }
+            }
+            document.getElementById("output").innerText = sumOdds; //output
+        }
+    </script>
 </head>
 
 <body>
-    <label> enter the current weather <br> hot, rain or snow <br>
-        <input type="text" id="weatherQuestion"></label>
-    <button type="button" id="but1" onclick="footWearFunction()">submit</button>
+    <label>Enter a number. <br>
+        <input type="text" id="numberQuestion"></label>
+    <button type="button" id="but1" onclick="addOdds()">submit</button>
     <div id="output"></div>
 
 </body>
