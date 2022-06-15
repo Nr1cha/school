@@ -8,6 +8,12 @@
     <meta name="author" content="Nick Richards">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Document</title>
+    <style>
+        #output {
+            font-size: 1.5em;
+            margin-top: 40px;
+        }
+    </style>
     <script>
         function exponentNum() {
             let exponent;
@@ -23,9 +29,7 @@
 </head>
 
 <body>
-    <label> Please enter the subtotal: <br>
-        <input type="text" id="exponent"></label>
-    <button type="button" id="but_submit" onclick="exponentNum()">submit</button>
+    <button type="button" onclick="exponentNum()">Start</button>
     <div id="output"></div>
 
 </body>
