@@ -1,5 +1,9 @@
 <!DOCTYPE html>
 <html lang="en">
+<!--
+    where i got it from and made adjustments
+    https://www.codevscolor.com/javascript-print-multiplication-table
+-->
 
 <head>
     <meta charset="UTF-8">
@@ -10,22 +14,24 @@
     <title>Document</title>
     <script>
         function timesTable() {
-            let numberAlert = parseInt(prompt("Enter an integer: "));
+            let number;
+            number = parseInt(document.getElementById("number").value);
             let range = parseInt(prompt("Enter a range: "));
+            let result = "";
 
             for (let i = 1; i <= range; i++) {
-                let result = i * numberAlert;
-                document.getElementById("output").innerText = result;
+                result = result + "<p>" + number + "*" + i + "=" + number * i + "</p>";
             }
+            document.getElementById("output").innerHTML = result;
         }
 
     </script>
 </head>
 
 <body>
-    <label> Please enter the subtotal: <br>
-        <input type="text" id="subtotalBox"></label>
-    <button type="button" id="but_submit" onclick="timesTable()">submit</button>
+    <label> Please enter an integer: <br>
+        <input type="text" id="number"></label>
+    <button type="button" onclick="timesTable()">submit</button>
     <div class="table">
 
     </div>

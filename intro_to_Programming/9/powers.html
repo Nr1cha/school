@@ -9,14 +9,23 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Document</title>
     <script>
-        
+        function exponentNum() {
+            let exponent;
+            // let Math;
+            let result = "";
+            for (let exponent = 0; exponent <= 31; exponent++) {
+                result = result + "<p>" + Math.pow(2, exponent) + " is 2 to the exponent of: " +exponent + "</p>";
+            }
+            document.getElementById("output").innerHTML = result
+        }
+
     </script>
 </head>
 
 <body>
     <label> Please enter the subtotal: <br>
-        <input type="text" id="subtotalBox"></label>
-    <button type="button" id="but_submit" onclick="calculeteSubtotal()">submit</button>
+        <input type="text" id="exponent"></label>
+    <button type="button" id="but_submit" onclick="exponentNum()">submit</button>
     <div id="output"></div>
 
 </body>
