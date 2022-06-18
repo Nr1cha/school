@@ -1,50 +1,37 @@
-<!DOCTYPE html>
-<html lang="en">
+<!DOCTYPE HTML>
+<html lang="en-us">
 
 <head>
-    <meta charset="UTF-8">
-    <meta name="description" content="test">
-    <meta name="keywords" content="HTML, CSS, JavaScript">
-    <meta name="author" content="Nick Richards">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>test</title>
-    <style>
-        button {
-            background-color: #806ae4;
-            border: none;
-            color: white;
-            padding: 15px 15px;
-            text-align: center;
-            text-decoration: none;
-            font-size: 15px;
-            cursor: pointer;
-            border-radius: 12px;
-        }
-
-        p {
-            color: #27186b;
-        }
-    </style>
+    <meta charset="utf-8">
+    <title>Title</title>
     <script>
-        function addNumbers() {
-            let number;
-            let result = "";
+        /* Input:take three numbers labeled start, end, divisor from three text fields.
+         * Processing: take the start number and the end number and incriment by the divisor 
+         * output: all the numbers from the start to the end number but skipped by the divisor
+         */
+        function numbers() {
+            let numberStart = parseFloat(document.getElementById("start").value);
+            let numberEnd = parseFloat(document.getElementById("end").value);
+            let numberDivisor = parseFloat(document.getElementById("divisor").value);
+            let test = '';
 
-            number = Number(document.getElementById("number").value);
-
-            for (let i = 1; i <= 12; i++) {
-                result = result + "<p>" + number + "*" + i + "=" + number * i + "</p>";
+            for (let i = numberStart; i <= numberEnd; i++){
+                if (i % numberDivisor == 0){
+                    test += i + ", ";
+                    document.getElementById("output").innerText = test;
+                }
             }
-
-            document.getElementById("result").innerHTML = result;
         }
+
     </script>
 </head>
 
 <body>
-    <label> Enter the number : <input id="number" />
-    <button onclick="addNumbers()">Print Multiplication table</button></label>
-    <div id="result">
+    Start: <input type="text" id="start" size="5"><br>
+    End: <input type="text" id="end" size="5"><br>
+    Divisor: <input type="text" id="divisor" size="5"><br>
+    <button type="button" onclick="numbers()">Click</button>
+    <div id="output"></div>
 </body>
 
 </html>

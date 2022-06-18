@@ -1,5 +1,10 @@
 <!DOCTYPE html>
 <html lang="en">
+    <!-- 
+        Input: user clicks on submit button
+        Processing: js takes 2 and shows the exponents from 0 to 31 using a for loop and math.pow 
+        Output: the page shows the exponents from 0 - 31 for 2 
+     -->
 
 <head>
     <meta charset="UTF-8">
@@ -16,22 +21,19 @@
     </style>
     <script>
         function exponentNum() {
-            let exponent;
+            // let exponent;
             // let Math;
             let result = "";
             for (let exponent = 0; exponent <= 31; exponent++) {
-                result = result + "<p>" + Math.pow(2, exponent) + " is 2 to the exponent of: " +exponent + "</p>";
+                result += "2 to the power of: " + Math.pow(2,exponent) + ", " + "<br>";
             }
-            document.getElementById("output").innerHTML = result
+            document.getElementById("output").innerHTML = result;
         }
-
     </script>
 </head>
 
 <body>
     <button type="button" onclick="exponentNum()">Start</button>
     <div id="output"></div>
-
 </body>
-
 </html>

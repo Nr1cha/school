@@ -1,5 +1,10 @@
 <!DOCTYPE html>
 <html lang="en">
+        <!-- 
+        Input: user inputs a number and a range number
+        Processing: js takes the first number and multiplies it by the 2nd number
+        Output: shows the number that user initially selected to the amount of the range they selected
+     -->
 
 <head>
     <meta charset="UTF-8">
@@ -11,26 +16,27 @@
     <script>
         function timesTable() {
             let number;
-            number = parseInt(document.getElementById("number").value);
-            let range = parseInt(prompt("Enter a range: "));
+            number = parseInt(document.getElementById("integer").value);
+            let range = parseInt(document.getElementById("range").value);
             let result = "";
 
             for (let i = 1; i <= range; i++) {
-                result = result + "<p>" + number + "*" + i + "=" + number * i + "</p>";
+                result += number + " x " + i + " = " + number * i + "<br>";
             }
             document.getElementById("output").innerHTML = result;
         }
-
     </script>
 </head>
 
 <body>
     <label> Please enter an integer: <br>
-        <input type="text" id="number"></label>
-    <button type="button" onclick="timesTable()">submit</button>
-    <div class="table">
+    <input type="text" id="integer"></label><br>
 
-    </div>
+    <label> please enter a integer range: <br>
+    <input type="text" id="range"></label>
+
+    <button type="button" onclick="timesTable()">submit</button>
+
     <div id="output"></div>
 
 </body>
