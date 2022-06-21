@@ -9,26 +9,30 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Document</title>
     <script>
+        
+        //function for user input
         function doInputOutput() {
-            let userTemp = document.getElementById("Temperature").value;
-            let windSpeed = document.getElementById("Wind Speed").value;
-            let test = windChill()
-            document.getElementById("output").innerHTML = test;
-            return test;
+            let tempF = document.getElementById("Temperature").value; // ask the user for the temperature
+            let speed = document.getElementById("Wind Speed").value; // ask the user for the wind speed i MPH
+            let windChillValue = windChill({ tempF, speed }) // call the windChill function
+            document.getElementById("output").innerHTML = windChillValue; //output the stuff to the user
         }
-        function windChill(tempF, speed) {
-            let f = (35.74 + (0.6215 * userTemp)) - (35.75 * Math.pow(windSpeed, 0.16)) + (0.4275 * userTemp * Math.pow(windSpeed, 0.16));
-            return f;
+
+        //function for calculation
+        function windChill({ tempF, speed }) {
+            let calculatedWindChill = (35.74 + (0.6215 * tempF)) - (35.75 * Math.pow(speed, 0.16)) + (0.4275 * tempF * Math.pow(speed, 0.16)); //math calculation
+            let formatedOutput = calculatedWindChill.toFixed(2) + " is the new temperature."; //formatted nice output
+            return formatedOutput; // returning the stuff
         }
 
     </script>
 </head>
 
 <body>
-    <label> Please enter the Temperature: <br>
+    <label> Please Enter the Temperature in Fahrenheit: <br>
         <input type="text" id="Temperature"></label><br>
 
-    <label> please enter a integer range: <br>
+    <label> please Enter the MPH Wind Speed: <br>
         <input type="text" id="Wind Speed"></label>
 
     <button type="button" onclick="doInputOutput()">Wind Chill</button>
