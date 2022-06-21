@@ -1,5 +1,6 @@
 <!DOCTYPE html>
 <html lang="en">
+
 <head>
     <meta charset="UTF-8">
     <meta name="description" content="wind chill">
@@ -8,21 +9,32 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Document</title>
     <script>
-        function doInputOutput()
-        function windChill(tempF, speed)
+        function doInputOutput() {
+            let userTemp = document.getElementById("Temperature").value;
+            let windSpeed = document.getElementById("Wind Speed").value;
+            let test = windChill()
+            document.getElementById("output").innerHTML = test;
+            return test;
+        }
+        function windChill(tempF, speed) {
+            let f = (35.74 + (0.6215 * userTemp)) - (35.75 * Math.pow(windSpeed, 0.16)) + (0.4275 * userTemp * Math.pow(windSpeed, 0.16));
+            return f;
+        }
 
     </script>
 </head>
+
 <body>
-    <label> Please enter an integer: <br>
+    <label> Please enter the Temperature: <br>
         <input type="text" id="Temperature"></label><br>
-    
-        <label> please enter a integer range: <br>
+
+    <label> please enter a integer range: <br>
         <input type="text" id="Wind Speed"></label>
-    
-        <button type="button" onclick="doInputOutput()">Wind Chill</button>
-    
-        <div id="output"></div>
-    
+
+    <button type="button" onclick="doInputOutput()">Wind Chill</button>
+
+    <div id="output"></div>
+
 </body>
+
 </html>
