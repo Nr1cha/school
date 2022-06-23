@@ -1,0 +1,36 @@
+<!DOCTYPE HTML>
+<html lang="en-us">
+<head>
+<!-- The following meta tag tells the browser that this document
+uses the 8-bit Unicode Transformation Format encoding. -->
+<meta charset="utf-8">
+<!-- The following meta tag sets the viewport to make this page look
+good on all devices-->
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+</style>
+<title>windChill</title>
+<script>
+/*Input: temperature in Fahrenheit and wind speed as MPH
+    Process: function windChill(tempF, speed) calculates wind chill
+    Process: function doInputOutput() gets input and outputs windChill into div
+    Output: windChill in Fahrenheit*/
+function doInputOutput() {
+    let tempF = parseFloat(document.getElementById("Temperature").value);
+    let speed = parseFloat(document.getElementById("Wind Speed").value);
+    let output = windChill(tempF, speed);
+    document.getElementById("outputDiv").innerHTML = output + " degrees Fahrenheit";
+}
+function windChill(tempF, speed) {
+    return (35.74 + 0.6215 * tempF - 35.75 * Math.pow(speed, 0.16) + 0.4275 * tempF * Math.pow(speed, 0.16)).toFixed(2);
+}
+</script>
+</head>
+
+<body>                          
+<p>Enter current Temperature in degrees Fahrenheit and Wind Speed in MPH to calculate Wind Chill.<br>
+    Temperature:<input type="text" id="Temperature">
+    Wind Speed:<input type="text" id="Wind Speed">  
+    <button type="button" onclick="doInputOutput()">Wind Chill</button></p>
+<div id="outputDiv"></div>
+</body>      
+</html>

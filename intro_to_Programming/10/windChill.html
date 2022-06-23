@@ -9,11 +9,16 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Document</title>
     <script>
-        
+        /*  Input: user inputs temperature in Fahrenheit
+            and the wind speed as miles per hour
+            Processing: calculate wind chill with users inputs
+            Output: display the wind chill calculation for user
+        */
+
         //function for user input
         function doInputOutput() {
-            let tempF = document.getElementById("Temperature").value; // ask the user for the temperature
-            let speed = document.getElementById("Wind_Speed").value; // ask the user for the wind speed i MPH
+            let tempF = parseFloat(document.getElementById("Temperature").value); // ask the user for the temperature
+            let speed = parseFloat(document.getElementById("Wind_Speed").value); // ask the user for the wind speed i MPH
             let windChillValue = windChill({ tempF, speed }) // call the windChill function
             document.getElementById("output").innerHTML = windChillValue; //output the stuff to the user
         }
