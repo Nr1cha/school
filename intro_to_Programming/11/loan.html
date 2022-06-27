@@ -1,0 +1,47 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="description" content="Invest">
+    <meta name="keywords" content="HTML, CSS, JavaScript">
+    <meta name="author" content="Nick Richards">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Investment App</title>
+    <script>
+        function doPayment() { //this takes input from user
+            let amntInvested = parseFloat(document.getElementById("").value);
+            let annualRate = parseFloat(document.getElementById("").value);
+            let numYears = parseFloat(document.getElementById("").value);
+            let termYears = parseFloat(document.getElementById("").value);
+            // let compFutrVal = computeFutureValue(amntInvested, annualRate, numYears, termYears) //calls the computeFutureValue function
+            document.getElementById("output").innerHTML = compFutrVal; //output the processed code to the page
+        }
+        function computeFutureValue() {
+
+        }
+    </script>
+</head>
+
+<body>
+    <label> Amount borrowed (principal) <br>
+        <input type="text" id="amount_principal"></label><br>
+
+    <label> Annual interest rate (example: .065) <br>
+        <input type="text" id="annualRate"></label><br>
+
+    <label> Number of years <br>
+        <input type="text" id="numYears"></label><br>
+
+    <label> Payments per year <br>
+        <input type="text" id="pmntsPerYear"></label><br>
+        <button type="button" onclick="">Compute payment</button>
+
+    <label>Number of Payments paid to date <br>
+    <input type="text" id="pmnts-paid-to-date"></label><br>
+    <button type="button" onclick="doFV()">Compute payoff amount</button>
+
+    <div id="output"></div>
+</body>
+
+</html>
