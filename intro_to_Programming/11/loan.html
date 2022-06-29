@@ -3,11 +3,16 @@
 
 <head>
     <meta charset="UTF-8">
-    <meta name="description" content="Invest">
+    <meta name="description" content="loan">
     <meta name="keywords" content="HTML, CSS, JavaScript">
     <meta name="author" content="Nick Richards">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Investment App</title>
+    <style>
+        label,input,button,div{
+            margin:.7em;
+        }
+    </style>
     <script>
         function doPayment() { //this takes input from user
             let amntBorrowed = parseFloat(document.getElementById("amount_principal").value);
@@ -37,10 +42,9 @@
         function computeBalance(principal, annualRate, years, periodsPerYear, numberOfPaymentsPaidToDate){
             //  b = is the balance or payoff amount
             //  a = is the loan amount 
-            //  p = is the payment per period 
             //  d = is the number of payments paid to date.
-            let r = annualRate / periodsPerYear;  //  r = is the interest rate per period
-            let p = computePayment(principal,annualRate,years,periodsPerYear);
+            let r = annualRate / periodsPerYear; //  r = is the interest rate per period
+            let p = computePayment(principal,annualRate,years,periodsPerYear); //  p = is the payment per period
             let first = principal * Math.pow(1 + r, numberOfPaymentsPaidToDate);
             let second = (p * (Math.pow(1 + r, numberOfPaymentsPaidToDate) - 1)) / r;
             let b = first - second;
@@ -50,6 +54,7 @@
 </head>
 
 <body>
+    <h1>Loan Calculator</h1>
     <label> Amount borrowed (principal) <br>
         <input type="text" id="amount_principal"></label><br>
 
