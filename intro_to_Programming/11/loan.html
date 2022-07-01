@@ -7,32 +7,43 @@
     <meta name="keywords" content="HTML, CSS, JavaScript">
     <meta name="author" content="Nick Richards">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Investment App</title>
+    <title>Loan App</title>
     <style>
         label,input,button,div{
             margin:.7em;
         }
     </style>
     <script>
-        function doPayment() { //this takes input from user
-            let amntBorrowed = parseFloat(document.getElementById("amount_principal").value);
-            let intRate = parseFloat(document.getElementById("annualRate").value);
-            let numYears = parseFloat(document.getElementById("numYears").value);
-            let pmtsPerYear = parseFloat(document.getElementById("pmntsPerYear").value);
-            let compFutrVal = computePayment(amntBorrowed, intRate, numYears, pmtsPerYear) //calls the computeFutureValue function
-            document.getElementById("output1").innerHTML = compFutrVal; //output the processed code to the page
-        }
-        function doBalance(){
+
+        // GET USER INPUT AND STORE IN OBJECT
+        function userInput(){
             let amntBorrowed = parseFloat(document.getElementById("amount_principal").value);
             let intRate = parseFloat(document.getElementById("annualRate").value);
             let numYears = parseFloat(document.getElementById("numYears").value);
             let pmtsPerYear = parseFloat(document.getElementById("pmntsPerYear").value);
             let numPmntsToDate = parseFloat(document.getElementById("pmnts-paid-to-date").value);
-            let compFutrVal = computeBalance(amntBorrowed, intRate, numYears, pmtsPerYear, numPmntsToDate) //calls the computeFutureValue function
-            document.getElementById("output2").innerHTML = compFutrVal; //output the processed code to the page
+            return {
+                amntBorrowed: amntBorrowed,
+                intRate: intRate,
+                numYears: numYears,
+                pmtsPerYear: pmtsPerYear,
+                numPmntsToDate: numPmntsToDate
+            }
         }
 
+        // OUTPUT USER DESIRED INPUT TO PAGE
+        function doPayment() { //this takes input from user
+            let getInput = userInput()
+            let compFutrVal = computePayment(getInput.amntBorrowed, getInput.intRate, getInput.numYears, getInput.pmtsPerYear) //calls the computeFutureValue function and using the getInput function, add the object desired
+            document.getElementById("output1").innerHTML = "$" + compFutrVal; //output the processed code to the page
+        }
+        function doBalance(){
+            let getInput = userInput()
+            let compFutrVal = computeBalance(getInput.amntBorrowed, getInput.intRate, getInput.numYears, getInput.pmtsPerYear, getInput.numPmntsToDate) //calls the computeFutureValue function and using the getInput function, add the object desired
+            document.getElementById("output2").innerHTML = "$" + compFutrVal; //output the processed code to the page
+        }
 
+        // COMPUTE FUNCTIONS
         function computePayment(principal, annualRate, years, periodsPerYear) {
             let r = annualRate / periodsPerYear;
             let p = principal * (r) / (1 - Math.pow(1 + r, -(years * periodsPerYear)));
@@ -40,15 +51,13 @@
         }
 
         function computeBalance(principal, annualRate, years, periodsPerYear, numberOfPaymentsPaidToDate){
-            //  b = is the balance or payoff amount
-            //  a = is the loan amount 
-            //  d = is the number of payments paid to date.
-            let r = annualRate / periodsPerYear; //  r = is the interest rate per period
-            let p = computePayment(principal,annualRate,years,periodsPerYear); //  p = is the payment per period
+            let r = annualRate / periodsPerYear;
+            let p = computePayment(principal, annualRate, years, periodsPerYear);
             let first = principal * Math.pow(1 + r, numberOfPaymentsPaidToDate);
             let second = (p * (Math.pow(1 + r, numberOfPaymentsPaidToDate) - 1)) / r;
             let b = first - second;
-            return b.toFixed(2);
+            
+            return b.toLocaleString("en-US");
         }
     </script>
 </head>
