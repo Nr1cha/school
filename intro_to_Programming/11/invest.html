@@ -3,24 +3,41 @@
 
 <head>
     <meta charset="UTF-8">
-    <meta name="description" content="Invest">
+    <meta name="description" content="invest">
     <meta name="keywords" content="HTML, CSS, JavaScript">
     <meta name="author" content="Nick Richards">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Investment App</title>
+    <!-- 
+        input: get numbers from the user
+        processing:compute the investment
+        output:shows the user the new computed values -->
     <script>
-        function doFV() { //this takes input from user
+        // USER INPUT FUNCTION
+        function getUserInput() {
             let amntInvested = parseFloat(document.getElementById("amount_principal").value);
             let annualRate = parseFloat(document.getElementById("annualRate").value);
             let numYears = parseFloat(document.getElementById("numYears").value);
             let termYears = parseFloat(document.getElementById("termsYear").value);
-            let compFutrVal = computeFutureValue(amntInvested, annualRate, numYears, termYears) //calls the computeFutureValue function
-            document.getElementById("output").innerHTML = compFutrVal; //output the processed code to the page
+            return {
+                amntInvested: amntInvested,
+                annualRate: annualRate,
+                numYears: numYears,
+                termYears: termYears
+            }
         }
+
+        // OUTPUT THE REQUESTED DATA TO THE USER
+        function doFV() {
+            let userData = getUserInput()
+            let compFutrVal = computeFutureValue(userData.amntInvested, userData.annualRate, userData.numYears, userData.termYears) //calls the getUserInput and passes that data to the computeFutureValue function
+            document.getElementById("output").innerHTML = "$" + compFutrVal; //output the processed code to the page
+        }
+
+        // CALCULATION FUNCTION
         function computeFutureValue(principal, annualRate, years, periodsPerYear) {
             let test = periodsPerYear * years;
-            let futureValue = principal *((1 + annualRate/periodsPerYear)**test); //math calculation
-            console.log(futureValue);
+            let futureValue = principal * ((1 + annualRate / periodsPerYear) ** test);
             let formattedOutput = futureValue.toFixed(2);
             return formattedOutput;
         }
@@ -28,6 +45,7 @@
 </head>
 
 <body>
+    <h1>Investment Calculator</h1>
     <label> Amount invested(principal) <br>
         <input type="text" id="amount_principal"></label><br>
 

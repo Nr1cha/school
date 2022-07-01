@@ -8,15 +8,23 @@
     <meta name="author" content="Nick Richards">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Loan App</title>
+    <!--
+        input: get numbers from the user
+        processing:compute the investment
+        output:shows the user the new computed values
+      -->
     <style>
-        label,input,button,div{
-            margin:.7em;
+        label,
+        input,
+        button,
+        div {
+            margin: .7em;
         }
     </style>
     <script>
 
         // GET USER INPUT AND STORE IN OBJECT
-        function userInput(){
+        function userInput() {
             let amntBorrowed = parseFloat(document.getElementById("amount_principal").value);
             let intRate = parseFloat(document.getElementById("annualRate").value);
             let numYears = parseFloat(document.getElementById("numYears").value);
@@ -37,7 +45,7 @@
             let compFutrVal = computePayment(getInput.amntBorrowed, getInput.intRate, getInput.numYears, getInput.pmtsPerYear) //calls the computeFutureValue function and using the getInput function, add the object desired
             document.getElementById("output1").innerHTML = "$" + compFutrVal; //output the processed code to the page
         }
-        function doBalance(){
+        function doBalance() {
             let getInput = userInput()
             let compFutrVal = computeBalance(getInput.amntBorrowed, getInput.intRate, getInput.numYears, getInput.pmtsPerYear, getInput.numPmntsToDate) //calls the computeFutureValue function and using the getInput function, add the object desired
             document.getElementById("output2").innerHTML = "$" + compFutrVal; //output the processed code to the page
@@ -50,13 +58,12 @@
             return p.toFixed(2);
         }
 
-        function computeBalance(principal, annualRate, years, periodsPerYear, numberOfPaymentsPaidToDate){
+        function computeBalance(principal, annualRate, years, periodsPerYear, numberOfPaymentsPaidToDate) {
             let r = annualRate / periodsPerYear;
             let p = computePayment(principal, annualRate, years, periodsPerYear);
             let first = principal * Math.pow(1 + r, numberOfPaymentsPaidToDate);
             let second = (p * (Math.pow(1 + r, numberOfPaymentsPaidToDate) - 1)) / r;
             let b = first - second;
-            
             return b.toLocaleString("en-US");
         }
     </script>
@@ -75,11 +82,11 @@
 
     <label> Payments per year <br>
         <input type="text" id="pmntsPerYear"></label><br>
-        <button type="button" onclick="doPayment()">Compute payment</button><br>
+    <button type="button" onclick="doPayment()">Compute payment</button><br>
     <div id="output1"></div>
 
     <label>Number of Payments paid to date <br>
-    <input type="text" id="pmnts-paid-to-date"></label><br>
+        <input type="text" id="pmnts-paid-to-date"></label><br>
     <button type="button" onclick="doBalance()">Compute payoff amount</button><br>
     <div id="output2"></div>
 </body>
