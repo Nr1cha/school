@@ -17,14 +17,17 @@
         function test() {
             let list1 = [17, 8, 9, 5, 20];
             let list2 = [12, 4, 8, 15, 17, 5, 20, 11];
+            // console.log();
 
             // Test the addEnds function by calling it two times.
             let sum1 = addEnds(list1);
             let sum2 = addEnds(list2);
 
+
             // Test the getMiddle function by calling it two times.
             let mid1 = getMiddle(list1);
             let mid2 = getMiddle(list2);
+
 
             // Build a string to display to the user.
             let output =
@@ -38,7 +41,8 @@
         }
 
         function addEnds(list){
-            return first = list[0] + list.length - 1;
+            let sum = list[0] + list[list.length - 1];
+            return sum;
         }
 
         function getMiddle(list){
