@@ -9,15 +9,15 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Array</title>
     <script>
-        /* Defining Table
- * Input: no user input
- * Processing: Test the addEnds and getMiddle functions by calling them.
- * Output: The values returned from the addEnds and getMiddle functions.
- */
+        /* 
+            Defining Table
+        * Input: no user input
+        * Processing: Test the addEnds and getMiddle functions by calling them.
+        * Output: The values returned from the addEnds and getMiddle functions.
+        */
         function test() {
             let list1 = [17, 8, 9, 5, 20];
             let list2 = [12, 4, 8, 15, 17, 5, 20, 11];
-            // console.log();
 
             // Test the addEnds function by calling it two times.
             let sum1 = addEnds(list1);
@@ -46,8 +46,18 @@
         }
 
         function getMiddle(list){
+            let sum = 0;
+            list.forEach(function(num) { sum += num});
+            let average = sum / list.length;
+            // let average = list[0] += list[list.length] / list.length[i];
+            return average
+            // if (list.length % 0){ //EVEN
+            //     // let average = sum / list.length;
+            // }
+            // else if (list.length % 1){ //odd
 
-        }
+            }
+        // }
 
     </script>
 </head>
