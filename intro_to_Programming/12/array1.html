@@ -41,18 +41,18 @@
         }
 
         function addEnds(list) {
-            let sum = list[0] + list[list.length - 1];
-            return sum;
+            let sum = list[0] + list[list.length - 1]; //get the start and end
+            return sum; //return the result to the function that is calling this
         }
 
         function getMiddle(list) {
 
-            if (list.length % 2 === 0) {
+            if (list.length % 2 === 0) { // if it's even
                 let middle = (list.length / 2);
                 return (list[middle] + list[middle - 1]) / 2;
             }
 
-            else {
+            else { // if it's odd. 
                 let middle = (list.length - 1) / 2;
                 return list[middle];
             }
