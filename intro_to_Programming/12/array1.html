@@ -40,24 +40,23 @@
             document.getElementById('output').innerHTML = output;
         }
 
-        function addEnds(list){
+        function addEnds(list) {
             let sum = list[0] + list[list.length - 1];
             return sum;
         }
 
-        function getMiddle(list){
-            let sum = 0;
-            list.forEach(function(num) { sum += num});
-            let average = sum / list.length;
-            // let average = list[0] += list[list.length] / list.length[i];
-            return average
-            // if (list.length % 0){ //EVEN
-            //     // let average = sum / list.length;
-            // }
-            // else if (list.length % 1){ //odd
+        function getMiddle(list) {
 
+            if (list.length % 2 === 0) {
+                let middle = (list.length / 2);
+                return (list[middle] + list[middle - 1]) / 2;
             }
-        // }
+
+            else {
+                let middle = (list.length - 1) / 2;
+                return list[middle];
+            }
+        }
 
     </script>
 </head>
