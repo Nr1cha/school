@@ -38,13 +38,17 @@
         }
 
         function countEvens(list) {
-
-            if (list[i] % 2 === 0){ // count even integers and return how many there are
-
+            let listOfEvens = 0;
+            for (let i = 0; i < list.length; i++) {
+                if (list[i] % 2 == 0) {
+                    listOfEvens++;
+                }
             }
+            return listOfEvens;
         }
         function multiply(list, multiplier) {
-
+            let endResult = list.map(list => list * multiplier);
+            return endResult;
         }
 
     </script>
