@@ -1,0 +1,61 @@
+<!DOCTYPE html>
+<html lang="en-us">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Array2</title>
+    <meta name="description" content="This page includes my array2 document" />
+    <script>
+      /*
+      Input: no user input.
+      Processing: Test the countEvens and multiply functions by calling them.
+      Output: The values returned from the countEvens and multiply functions.
+      */
+      function test() {
+        let list1 = [17, 8, 9, 5, 20];
+        let list2 = [12, 4, 8, 15, 17, 5, 20, 11];
+
+        // Test the countEvens function by calling it two times.
+        let count1 = countEvens(list1);
+        let count2 = countEvens(list2);
+
+        // Test the multiply function by calling it two times.
+        let mult1 = multiply(list1, 3);
+        let mult2 = multiply(list2, 2);
+
+        // Build a string to display to the user.
+        let output = count1 + "<br>" + count2 + "<br>" + mult1 + "<br>" + mult2;
+
+        // Display the output string for the user to see.
+        document.getElementById("output").innerHTML = output;
+      }
+
+      //Return the number of even integers in an array.
+      function countEvens(list) {
+        let count = 0;
+        //Count how many even numbers in the array.
+        for (let i = 0; i < list.length; i++) {
+          if (list[i] % 2 == 0) {
+            count++;
+          }
+        }
+        return count;
+      }
+
+      //Multiply each element in an array by some value and to return the products in an array.
+      function multiply(list, multiplier) {
+        let multiply = [];
+        //Very similar to the countEvens function.
+        for (let i = 0; i < list.length; i++) {
+          //Adds the new items to the end of an array.
+          multiply.push(list[i] * multiplier);
+        }
+        return multiply;
+      }
+    </script>
+  </head>
+  <body>
+    <button type="button" onclick="test()">Test</button>
+    <div id="output"></div>
+  </body>
+</html>
